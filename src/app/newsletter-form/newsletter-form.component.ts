@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, NgForm } from '@angular/forms';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import {CookieService} from 'ngx-cookie-service';
 
 interface MailChimpResponse {
   result:string;
