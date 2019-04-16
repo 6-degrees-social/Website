@@ -8,12 +8,14 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NewsletterFormComponent } from './newsletter-form/newsletter-form.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { MaskComponent } from './mask/mask.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NewsletterFormComponent,
-    NavbarComponent
+    NavbarComponent,
+    MaskComponent
   ],
   imports: [
     BrowserModule,
