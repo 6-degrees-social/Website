@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, NgForm } from '@angular/forms';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import {CookieService} from 'ngx-cookie-service';
 
 interface MailChimpResponse {
   result:string;
@@ -10,7 +11,7 @@ interface MailChimpResponse {
 @Component({
   selector: 'app-newsletter-form',
   templateUrl: './newsletter-form.component.html',
-  styleUrls: ['./newsletter-form.component.css']
+  styleUrls: ['./newsletter-form.component.scss']
 })
 export class NewsletterFormComponent implements OnInit {
 
