@@ -1,5 +1,6 @@
-<app-navbar></app-navbar>
-<app-mask>
-  
 
-</app-mask>
+<div class="image">
+  <app-navbar></app-navbar>
+  <app-newsletter-form *ngIf='!isSubscribed' [@collapseForm]="stateName"></app-newsletter-form>
+  
+</div>
