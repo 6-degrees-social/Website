@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, NgForm } from '@angular/forms';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { CookieService} from 'ngx-cookie-service';
 
 interface MailChimpResponse {
   result:string;
@@ -18,7 +19,7 @@ export class NewsletterFormComponent implements OnInit {
   mailChimpEndpoint = 'https://gmail.us20.list-manage.com/subscribe/post-json?u=0863c931e41957d9a8cb16e12&amp;id=1bdc22b205&';
   error = '';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private _cookieService: CookieService) { }
 
   emailControl = new FormControl('', [
     Validators.required,
@@ -33,7 +34,7 @@ export class NewsletterFormComponent implements OnInit {
     this.error = '';
     
     if(this.emailControl.status === 'VALID') {
-      console.log("workds")
+      console.log("works")
       const params = new HttpParams()
         // .set('FNAME', this.nameControl.value)
         .set('EMAIL', this.emailControl.value)
@@ -46,17 +47,22 @@ export class NewsletterFormComponent implements OnInit {
         console.log(response);
         if(response.result && response.result !== 'error') {
           this.submitted = true;
+
         }
         else {
           this.error = response.msg;
+          this.setCookie(this.emailControl.value);
         }
       }, error => {
         console.error(error);
         this.error = 'Sorry, an error occurred.';
       })
     } else{
-      console.log("dosen't work");
+      console.log("doesn't work");
     }
+  }
+  setCookie(cEmail) {
+    this._cookieService.set("Email", cEmail)
   }
 
   ngOnInit() {
