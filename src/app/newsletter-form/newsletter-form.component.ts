@@ -47,11 +47,11 @@ export class NewsletterFormComponent implements OnInit {
         console.log(response);
         if(response.result && response.result !== 'error') {
           this.submitted = true;
-
+          this.setCookie(this.emailControl.value);
         }
         else {
           this.error = response.msg;
-          this.setCookie(this.emailControl.value);
+          
         }
       }, error => {
         console.error(error);
