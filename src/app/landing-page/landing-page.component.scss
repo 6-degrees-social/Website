@@ -1,4 +1,12 @@
-app-mask {
+.image {
     height: 100%;
-    background-color: rgba(147, 242, 106, 0.4);
+    background-image: url('../../assets/Images/Landing-landscape.jpg');
+    background-size: cover;
+}
+.container-fluid{
+    width: calc(100% - 2 * 32px);
+    padding: 0 32px;
+}
+.navClass {
+    padding-top: 15px;
 }
