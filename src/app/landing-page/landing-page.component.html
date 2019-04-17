@@ -1,6 +1,7 @@
 
 <div class="image">
-  <app-navbar></app-navbar>
-  <app-newsletter-form *ngIf='!isSubscribed' [@collapseForm]="stateName"></app-newsletter-form>
-  
+  <div class="container-fluid">
+    <div class="navClass"><app-navbar></app-navbar></div>
+      <app-newsletter-form *ngIf='!isSubscribed' [@collapseForm]="stateName"></app-newsletter-form>
+  </div>
 </div>
