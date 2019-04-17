@@ -5,6 +5,8 @@ import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatFormFieldModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { NewsletterFormComponent } from './newsletter-form/newsletter-form.component';
@@ -22,7 +24,10 @@ import { NavbarComponent } from './navbar/navbar.component';
     HttpClientJsonpModule,
     ReactiveFormsModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
