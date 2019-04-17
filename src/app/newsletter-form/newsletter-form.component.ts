@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormControl, Validators, NgForm } from '@angular/forms';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { CookieService} from 'ngx-cookie-service';
@@ -15,10 +15,11 @@ interface MailChimpResponse {
 })
 export class NewsletterFormComponent implements OnInit {
 
+  @Output() submitEvent: EventEmitter<any> = new EventEmitter();
   submitted = false;
   mailChimpEndpoint = 'https://gmail.us20.list-manage.com/subscribe/post-json?u=0863c931e41957d9a8cb16e12&amp;id=1bdc22b205&';
   error = '';
-
+  
   constructor(private http: HttpClient, private _cookieService: CookieService) { }
 
   emailControl = new FormControl('', [
@@ -48,6 +49,7 @@ export class NewsletterFormComponent implements OnInit {
         if(response.result && response.result !== 'error') {
           this.submitted = true;
           this.setCookie(this.emailControl.value);
+          this.submitEvent.emit(null);
         }
         else {
           this.error = response.msg;

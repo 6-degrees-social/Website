@@ -9,8 +9,8 @@ import {trigger, state, style, transition, animate} from '@angular/animations';
   animations:  [
     trigger('collapseForm', [
       state('show',style({})),
-      state('hide',style({ transform: 'translatey(-150%)' })),
-      transition('show => hide',animate('900ms ease-out'))
+      state('hide',style({ transform: 'translatey(-500px)' })),
+      transition('show => hide',animate('700ms ease-out'))
 
     ])
   ]
@@ -25,6 +25,7 @@ export class LandingPageComponent implements OnInit {
   } 
 
   collapse() {
+    console.log("collapse method")
     this.show = !this.show;
   }
   constructor(private _cookieService: CookieService) { }

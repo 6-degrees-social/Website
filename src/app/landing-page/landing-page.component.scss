@@ -1,12 +1,28 @@
 .image {
     height: 100%;
-    background-image: url('../../assets/Images/Landing-landscape.jpg');
+    background-image: url('../../assets/Images/photo-1539635278303-d4002c07eae3.jpg');
     background-size: cover;
 }
 .container-fluid{
+    height: 100%;
     width: calc(100% - 2 * 32px);
     padding: 0 32px;
 }
 .navClass {
     padding-top: 15px;
+}
+.formClass {
+    margin: auto;
+    margin-top: 10%;
+    width: 500px;
+    background-color: rgba($color:#ffffff, $alpha: 0.6);
+    padding: 10px;
+    border-collapse: separate; 
+    border-radius: 7px;
+}
+h1 {
+    color: #ffffff;
+    text-align: center;
+    font-weight: 700;
+    font-size: 70px;
 }
