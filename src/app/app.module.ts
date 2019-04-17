@@ -13,7 +13,9 @@ import { AppComponent } from './app.component';
 import { NewsletterFormComponent } from './newsletter-form/newsletter-form.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MaskComponent } from './mask/mask.component';
-import { LandingPageComponent} from './landing-page/landing-page.component' 
+import { LandingPageComponent} from './landing-page/landing-page.component';
+import { FrameListComponent } from './frame-list/frame-list.component';
+import { AboutSectionComponent } from './about-section/about-section.component' 
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { LandingPageComponent} from './landing-page/landing-page.component'
     NewsletterFormComponent,
     NavbarComponent,
     MaskComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    FrameListComponent,
+    AboutSectionComponent
   ],
   imports: [
     BrowserModule,
