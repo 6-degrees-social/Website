@@ -9,11 +9,15 @@ import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
   animations: [
     trigger('changeDivSize', [
       state('initial', style({
-        backgroundColor:'rgba(0, 0, 0, 0)'
+        backgroundColor:'rgba(0, 0, 0, 0)',
+        height: '70px',
+
+
       })),
       state('final', style({
-        backgroundColor: 'rgba(0, 0, 0, 1)',
-        height: '70px'
+        backgroundColor: 'rgba(255, 255, 255, 1)',
+        height: '70px',
+        boxShadow: '0 6px 20px 0 rgba(0, 0, 0, 0.5)'
       })),
       transition('initial=>final', animate('250ms')),
       transition('final=>initial', animate('400ms'))
