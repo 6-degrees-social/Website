@@ -39,7 +39,7 @@ import { AboutSectionComponent } from './about-section/about-section.component'
     BrowserAnimationsModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
   ],
   providers: [
     CookieService
