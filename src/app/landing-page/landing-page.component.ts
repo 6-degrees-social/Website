@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import {trigger, state, style, transition, animate} from '@angular/animations';
 
@@ -16,7 +16,7 @@ import {trigger, state, style, transition, animate} from '@angular/animations';
   ]
 })
 export class LandingPageComponent implements OnInit {
-
+  @Output() unlockBodyEvent: EventEmitter<any> = new EventEmitter();
   isSubscribed: boolean = this._cookieService.check("Email");
   show = true;
 
@@ -27,6 +27,7 @@ export class LandingPageComponent implements OnInit {
   collapse() {
     console.log("collapse method")
     this.show = !this.show;
+    this.unlockBodyEvent.emit(null);
   }
   constructor(private _cookieService: CookieService) { }
   

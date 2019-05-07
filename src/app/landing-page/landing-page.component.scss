@@ -1,18 +1,22 @@
 .image {
     height: 100%;
+    filter: brightness(80%);
     background-image: url('../../assets/Images/photo-1539635278303-d4002c07eae3.jpg');
+    background-position: center;
     background-size: cover;
+    z-index: -1;
 }
 .container-fluid{
-    height: 100%;
-    width: calc(100% - 2 * 32px);
-    padding: 0 32px;
+    top: 0;
+    position: absolute;
+    height: 100%; 
+    width: 100%;
 }
 .navClass {
     padding-top: 15px;
 }
 .formClass {
-    margin: auto;
+    margin:0 auto;
     margin-top: 10%;
     width: 500px;
     background-color: rgba($color:#ffffff, $alpha: 0.6);
@@ -21,8 +25,12 @@
     border-radius: 7px;
 }
 h1 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
     color: #ffffff;
-    text-align: center;
     font-weight: 700;
     font-size: 70px;
+    margin: 20px;
+    text-shadow: black 0.1em 0.1em 0.2em;
 }
