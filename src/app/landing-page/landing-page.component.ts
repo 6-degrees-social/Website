@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import {trigger, state, style, transition, animate} from '@angular/animations';
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
 @Component({
   selector: 'app-landing-page',
@@ -28,11 +29,22 @@ export class LandingPageComponent implements OnInit {
     console.log("collapse method")
     this.show = !this.show;
     this.unlockBodyEvent.emit(null);
+    enableBodyScroll(this.targetElement);
   }
-  constructor(private _cookieService: CookieService) { }
+  constructor(private _cookieService: CookieService) {
+    if (this.isSubscribed) {
+      enableBodyScroll(this.targetElement)
+    } 
+    else {
+      disableBodyScroll(this.targetElement);  
+    } 
+  }
   
   ngOnInit() {
     console.log(this.isSubscribed);
   }
-
+  targetElement = null;
+  unlockBody() {
+    
+  }
 }
