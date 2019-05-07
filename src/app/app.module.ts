@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatButtonModule, MatFormFieldModule} from '@angular/material';
 import { MatInputModule, MatInput } from '@angular/material/input';
+import { disableBodyScroll, enableBodyScroll, } from 'body-scroll-lock';
 
 import { AppComponent } from './app.component';
 import { NewsletterFormComponent } from './newsletter-form/newsletter-form.component';
@@ -38,7 +39,9 @@ import { AboutSectionComponent } from './about-section/about-section.component'
     BrowserAnimationsModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    enableBodyScroll,
+    disableBodyScroll
   ],
   providers: [
     CookieService

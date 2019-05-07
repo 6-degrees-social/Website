@@ -6,7 +6,10 @@ h5 {
 mat-form-field {
     width: 100%;
 }
+.btnWrap {
+    text-align: center;
+}
 .btnSubmit {
-    margin: auto;
     width: 100px;
+    display: block;
 }
