@@ -1,8 +1,9 @@
 
 <div class="image">
-  <div class="container-fluid">
-    <div class="navClass"><app-navbar></app-navbar></div>
-    <h1>Recommendations, from friends</h1>
-    <div class="formClass" [@collapseForm]="stateName"><app-newsletter-form *ngIf='!isSubscribed' (submitEvent)="collapse()"></app-newsletter-form></div>
-  </div>
+  
+</div>
+<div class="container-fluid">
+  <div class="navClass"><app-navbar></app-navbar></div>
+  <div class="formClass" *ngIf='!isSubscribed' [@collapseForm]="stateName"><app-newsletter-form (submitEvent)="collapse()"></app-newsletter-form></div>
+  <h1>Recommendations,<br/>from friends</h1>
 </div>

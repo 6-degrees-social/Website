@@ -46,7 +46,8 @@ export class NewsletterFormComponent implements OnInit {
 
       this.http.jsonp<MailChimpResponse>(mailChimpUrl, 'c').subscribe(response => {
         console.log(response);
-        if(response.result && response.result !== 'error') {
+        console.log("result of response: " + response.result)
+        if(response.result) {
           this.submitted = true;
           this.setCookie(this.emailControl.value);
           this.submitEvent.emit(null);
@@ -66,8 +67,11 @@ export class NewsletterFormComponent implements OnInit {
   setCookie(cEmail) {
     this._cookieService.set("Email", cEmail)
   }
-
+  getErrorMessage() {
+    return this.emailControl.hasError('required') ? 'You must enter a value' :
+        this.emailControl.hasError('email') ? 'Not a valid email' :
+            '';
+  }
   ngOnInit() {
   }
-
 }

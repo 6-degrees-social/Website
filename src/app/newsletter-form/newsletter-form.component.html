@@ -5,13 +5,15 @@
     <div id="mc_embed_signup_scroll">
 <mat-form-field>
 	<input matInput placeholder="Email" name="EMAIL" id="mce-EMAIL" [formControl]="emailControl">
+	<mat-error *ngIf="emailControl.invalid">{{getErrorMessage()}}</mat-error>
 </mat-form-field>
 	<div id="mce-responses" class="clear">
 		<div class="response" id="mce-error-response" style="display:none"></div>
 		<div class="response" id="mce-success-response" style="display:none"></div>
 	</div>
-    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_0863c931e41957d9a8cb16e12_1bdc22b205" tabindex="-1" value=""></div>
-    <div class="btnSubmit"><input type="submit" value="Registe for launch 🚀" name="subscribe" id="mc-embedded-subscribe" class="btn btn-secondary"></div>
+	<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_0863c931e41957d9a8cb16e12_1bdc22b205" tabindex="-1" value=""></div>
+	
+    <div class="btnWrap"><input class="btnSubmit" type="submit" value="Register for launch 🚀" name="subscribe" id="mc-embedded-subscribe" class="btn btn-secondary"></div>
     </div>
 </form>
 </div>
