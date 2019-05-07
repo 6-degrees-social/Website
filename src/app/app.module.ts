@@ -40,8 +40,6 @@ import { AboutSectionComponent } from './about-section/about-section.component'
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    enableBodyScroll,
-    disableBodyScroll
   ],
   providers: [
     CookieService
