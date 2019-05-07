@@ -1,14 +1,27 @@
-import { state } from '@angular/animations';
+import { state, trigger, style, transition, animate } from '@angular/animations';
 import { element } from 'protractor';
 import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  styleUrls: ['./navbar.component.scss'],
+  animations: [
+    trigger('changeDivSize', [
+      state('initial', style({
+        backgroundColor:'rgba(0, 0, 0, 0)'
+      })),
+      state('final', style({
+        backgroundColor: 'rgba(0, 0, 0, 1)',
+        height: '70px'
+      })),
+      transition('initial=>final', animate('250ms')),
+      transition('final=>initial', animate('400ms'))
+    ]),
+  ]
 })
 export class NavbarComponent implements OnInit {
-
+  currentState = 'initial';
   state = true;
   constructor(public el: ElementRef) { }
 
@@ -17,19 +30,11 @@ export class NavbarComponent implements OnInit {
 
   @HostListener("window:scroll", [])
   onWindowScroll() {
-    // this.el.nativeElement.setAttribute('style','background-color: black');
-    const number = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    const componentPosition = this.el.nativeElement.offsetTop;
     const scrollPosition = window.pageYOffset;
-    // this.state = false;
     if (scrollPosition >= 30) {
-      this.state = false
+      this.currentState = "final";
     } else {
-      this.state = true
-    }
-    // let nav = document.getElementById('navbar navbar-expand-lg navbar-light bg-transparent fixed-top');
-    
-    // let element = document.getElementsByClassName("navbar navbar-expand-lg navbar-light bg-transparent fixed-top");
-    
+      this.currentState = "initial";
+    }    
   }
 }
