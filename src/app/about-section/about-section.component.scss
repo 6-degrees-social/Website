@@ -1,12 +1,22 @@
 .about-container{
-    position: relative;
-    height: auto;
-    width: 100%;
-    display: block;
-    overflow: hidden;
+  font-size: 22px;
+  text-align: center;
+  position: relative;
+  height: 400px;
+  width: 100%;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  display: block;
+  overflow: hidden;
+  background: white;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: 900;
 }
 
 #about-pic{
-    content: url(../../assets/Images/photo-1539635278303-d4002c07eae3.jpg);
-    background-size: cover;
+  content: url(../../assets/Images/photo-1539635278303-d4002c07eae3.jpg);
+  background-size: cover;
 }

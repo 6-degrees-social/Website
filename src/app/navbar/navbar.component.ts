@@ -11,8 +11,6 @@ import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
       state('initial', style({
         backgroundColor:'rgba(0, 0, 0, 0)',
         height: '70px',
-
-
       })),
       state('final', style({
         backgroundColor: 'rgba(255, 255, 255, 1)',

@@ -4,7 +4,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { CookieService} from 'ngx-cookie-service';
 
 interface MailChimpResponse {
-  result:string;
+  result: string;
   msg: string;
 }
 
@@ -19,7 +19,8 @@ export class NewsletterFormComponent implements OnInit {
   submitted = false;
   mailChimpEndpoint = 'https://gmail.us20.list-manage.com/subscribe/post-json?u=0863c931e41957d9a8cb16e12&amp;id=1bdc22b205&';
   error = '';
-  
+
+  // tslint:disable-next-line:variable-name
   constructor(private http: HttpClient, private _cookieService: CookieService) { }
 
   emailControl = new FormControl('', [
@@ -33,9 +34,9 @@ export class NewsletterFormComponent implements OnInit {
   onSubmit(evt: Event) {
     evt.preventDefault();
     this.error = '';
-    
-    if(this.emailControl.status === 'VALID') {
-      console.log("works")
+
+    if (this.emailControl.status === 'VALID') {
+      console.log('works')
       const params = new HttpParams()
         // .set('FNAME', this.nameControl.value)
         .set('EMAIL', this.emailControl.value)
@@ -46,26 +47,24 @@ export class NewsletterFormComponent implements OnInit {
 
       this.http.jsonp<MailChimpResponse>(mailChimpUrl, 'c').subscribe(response => {
         console.log(response);
-        console.log("result of response: " + response.result)
-        if(response.result) {
+        console.log('result of response: ' + response.result)
+        if (response.result) {
           this.submitted = true;
           this.setCookie(this.emailControl.value);
           this.submitEvent.emit(null);
-        }
-        else {
+        } else {
           this.error = response.msg;
-          
         }
       }, error => {
         console.error(error);
         this.error = 'Sorry, an error occurred.';
-      })
+      });
     } else{
-      console.log("doesn't work");
+      console.log('doesn\'t work');
     }
   }
   setCookie(cEmail) {
-    this._cookieService.set("Email", cEmail)
+    this._cookieService.set('Email', cEmail);
   }
   getErrorMessage() {
     return this.emailControl.hasError('required') ? 'You must enter a value' :
