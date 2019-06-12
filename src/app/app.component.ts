@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { InstagramApiService } from './instagram-api.service';
+import { Component, OnInit } from '@angular/core';
 
 
 @Component({
@@ -6,6 +7,14 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent { 
+export class AppComponent implements OnInit { 
   title = 'sixdegrees-website';
+
+  constructor(private instagram: InstagramApiService) {
+
+  }
+
+  ngOnInit(){
+    console.log(this.instagram.getInstaData())
+  }
 }
