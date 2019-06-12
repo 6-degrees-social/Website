@@ -10,6 +10,7 @@ export class FrameListComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    document.getElementById("appSection").style.top = window.innerHeight * 1.3  + "px"
   }
 
 }

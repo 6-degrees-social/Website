@@ -58,6 +58,10 @@ export class LandingPageComponent implements OnInit {
     document.getElementById("imgToParallax").style.bottom = (window.pageYOffset / 2) + "px";
     document.getElementById("header").style.opacity = ((1 - (window.pageYOffset / window.innerHeight)).toString());
     console.log((window.pageYOffset / window.innerHeight))
+    if (window.pageYOffset > window.innerHeight )
+      document.getElementById('imgToParallax').style.visibility = 'hidden';
+    else
+      document.getElementById('imgToParallax').style.visibility = 'visible';
   }
 
   ngOnInit() {}

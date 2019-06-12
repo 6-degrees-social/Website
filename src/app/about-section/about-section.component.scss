@@ -11,12 +11,24 @@
   background: white;
 }
 
+.about-heading {
+  margin: 0px 200px;
+}
+
 h1 {
-  font-size: 50px;
-  font-weight: 900;
+  color: black;
+  font-size: 70px;
+  font-weight: 700;
 }
 
 #about-pic{
-  content: url(../../assets/Images/photo-1539635278303-d4002c07eae3.jpg);
+  content: url(../../assets/Images/Get-Trusted-Travel-Recommendations-big.jpg);
   background-size: cover;
+  position: fixed;
+  width: 100%;
+  z-index: -1;
+}
+.app-link {
+  width: 150px;
+  margin: 10px;
 }
