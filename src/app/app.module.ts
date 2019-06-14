@@ -18,7 +18,8 @@ import { MaskComponent } from './mask/mask.component';
 import { LandingPageComponent} from './landing-page/landing-page.component';
 import { FrameListComponent } from './frame-list/frame-list.component';
 import { AboutSectionComponent } from './about-section/about-section.component';
-import { AppSectionComponent } from './app-section/app-section.component' 
+import { AppSectionComponent } from './app-section/app-section.component';
+import { InstagramCarouselComponent } from './instagram-carousel/instagram-carousel.component' 
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AppSectionComponent } from './app-section/app-section.component'
     LandingPageComponent,
     FrameListComponent,
     AboutSectionComponent,
-    AppSectionComponent
+    AppSectionComponent,
+    InstagramCarouselComponent
   ],
   imports: [
     BrowserModule,
