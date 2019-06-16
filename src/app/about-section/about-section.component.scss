@@ -1,8 +1,8 @@
 .about-container{
   font-size: 22px;
   text-align: center;
+  align-content: center;
   position: relative;
-  height: 400px;
   width: 100%;
   padding-top: 80px;
   padding-bottom: 80px;
@@ -11,16 +11,19 @@
   background: white;
 }
 
-.about-heading {
-  margin: 0px 200px;
-}
-
 h1 {
   color: black;
   font-size: 70px;
   font-weight: 700;
 }
-
+@media (min-width: 1700px ) {
+  h1 {
+    font-size: 82px;
+  }
+  p {
+    font-size: 36px;
+  }
+}
 #about-pic{
   content: url(../../assets/Images/Get-Trusted-Travel-Recommendations-big.jpg);
   background-size: cover;

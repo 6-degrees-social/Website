@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-app-section',
@@ -10,7 +10,6 @@ export class AppSectionComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    document.getElementById("app").style.top = ((window.innerHeight ) - (window.pageYOffset / 2)) + "px";
-  }
 
+  }
 }
