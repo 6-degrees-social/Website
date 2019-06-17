@@ -1,8 +1,6 @@
 import { InstagramApiService } from './../instagram-api.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
-import * as $ from 'jquery';
-import { slick } from 'slick-carousel'
 
 @Component({
   selector: 'app-instagram-carousel',
@@ -10,33 +8,30 @@ import { slick } from 'slick-carousel'
   styleUrls: ['./instagram-carousel.component.scss']
 })
 export class InstagramCarouselComponent implements OnInit {
-  slides: string[] = [];
-
-  constructor(private _instagramService: InstagramApiService) { }
-
-  ngOnInit() {
-    this._instagramService.getInstaData().subscribe(({recent_photos: photos}) => {
-      photos.forEach(obj => {
-        this.slides.push(obj.images.standard_resolution.url);
-      });
-    })
-  }
- 
+  @Input() slides: string[] = [];
+  @Output() slideNum = new EventEmitter();
   slideConfig = {
     "slidesToShow": 1, 
     "slidesToScroll": 1,
     "infinite": true,
     "arrows": true,
-    "autoplaySpeed": 500,
+    "autoplay": true,
+    "autoplaySpeed": 2500,
     "pauseOnHover": true
   };
-  
+
+  constructor() { }
+
+  ngOnInit() {
+
+  }
+ 
   afterChange(e) {
-    console.log(e.currentSlide)
+    this.slideNum.emit(e.currentSlide);
   }
 
   slickInit(e) {
-    e.currentSlide = 0;
+    this.slideNum.emit(0);
   }
 
 }

@@ -1,5 +1,4 @@
-  <!-- You can now use your library component in app.component.html -->
-  <ngx-slick-carousel class="carousel" 
+<ngx-slick-carousel class="carousel" 
   #slickModal="slick-carousel" 
   [config]="slideConfig" 
   (init)="slickInit($event)"
@@ -8,8 +7,3 @@
 <img src="{{ slide }}" alt="">
 </div>
 </ngx-slick-carousel>
- 
-<button (click)="addSlide()">Add</button>
-<button (click)="removeSlide()">Remove</button>
-<button (click)="slickModal.slickGoTo(2)">slickGoto 2</button>
-<button (click)="slickModal.unslick()">unslick</button>
