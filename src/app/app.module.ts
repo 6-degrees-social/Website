@@ -10,6 +10,7 @@ import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatButtonModule, MatFormFieldModule} from '@angular/material';
 import { MatInputModule, MatInput } from '@angular/material/input';
 import { disableBodyScroll, enableBodyScroll, } from 'body-scroll-lock';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 import { AppComponent } from './app.component';
 import { NewsletterFormComponent } from './newsletter-form/newsletter-form.component';
@@ -44,6 +45,7 @@ import { InstagramCarouselComponent } from './instagram-carousel/instagram-carou
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    SlickCarouselModule
   ],
   providers: [
     CookieService

@@ -1,15 +1,18 @@
-// img {
-//     width: 600px;
-//     height: 600px;
-// }
+.slick-slider {
+  width: 500px;
+  margin: auto;
+  background: #000;
+  // height: 500px;
+  padding: 5px;
+}
 
-// ngb-carousel {
-//     width: 600px;
-//     height: 600px;
+.slick-slider img {
+  height: 500px;
+  margin: 0 auto;
+  min-width: 100%;
+}
 
-//     background-color: white;
 
-// }
 
 
 

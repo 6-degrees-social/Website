@@ -1,13 +1,15 @@
-<div class="d-flex justify-content-center">
-  <ngb-carousel *ngIf="images">
-      <ng-template ngbSlide class="carousel-item">
-        <img [src]="images[0]" alt="Random first slide">
-      </ng-template>
-      <ng-template ngbSlide class="carousel-item">
-        <img [src]="images[1]" alt="Random second slide">
-      </ng-template>
-      <ng-template ngbSlide class="carousel-item">
-        <img [src]="images[2]" alt="Random third slide">
-      </ng-template>
-    </ngb-carousel>
+  <!-- You can now use your library component in app.component.html -->
+  <ngx-slick-carousel class="carousel" 
+  #slickModal="slick-carousel" 
+  [config]="slideConfig" 
+  (init)="slickInit($event)"
+  (afterChange)="afterChange($event)">
+<div ngxSlickItem *ngFor="let slide of slides" class="slide">
+<img src="{{ slide }}" alt="">
 </div>
+</ngx-slick-carousel>
+ 
+<button (click)="addSlide()">Add</button>
+<button (click)="removeSlide()">Remove</button>
+<button (click)="slickModal.slickGoTo(2)">slickGoto 2</button>
+<button (click)="slickModal.unslick()">unslick</button>
