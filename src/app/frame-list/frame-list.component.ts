@@ -8,15 +8,19 @@ import {Component, ElementRef, HostListener, OnInit, ViewChild,} from '@angular/
 export class FrameListComponent implements OnInit {
 
   @ViewChild('appSectionWrap', {read: ElementRef}) private appSectionWrap: ElementRef;
+  @ViewChild('stepsSectionWrap', {read: ElementRef}) private stepsSectionWrap: ElementRef;
+  @ViewChild('instaSectionWrap', {read: ElementRef}) private instaSectionWrap: ElementRef;
   constructor() { }
 
   ngOnInit() {
-    this.appSectionWrap.nativeElement.style.top = window.innerHeight * 1.3  + "px";
+    this.appSectionWrap.nativeElement.style.top = window.innerHeight * 1.4  + "px";
+    this.stepsSectionWrap.nativeElement.style.top = window.innerHeight * 3.22 + "px";
+    this.instaSectionWrap.nativeElement.style.top = window.innerHeight * 5.17 + "px";
   }
 
   @HostListener("window:resize", [])
   onWindowResize() {
-    this.appSectionWrap.nativeElement.style.top = window.innerHeight * 1.3  + "px";
+    this.appSectionWrap.nativeElement.style.top = window.innerHeight * 1.4  + "px";
+    this.stepsSectionWrap.nativeElement.style.top = window.innerHeight * 3.2 + "px";
   }
-
 }
