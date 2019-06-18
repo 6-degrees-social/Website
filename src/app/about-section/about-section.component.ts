@@ -19,7 +19,7 @@ export class AboutSectionComponent implements OnInit,AfterViewInit {
   }
   @HostListener("window:scroll")
   onWindowScroll(){
-    console.log(this.HeadingContainer.nativeElement.style.height)
+    // console.log(this.HeadingContainer.nativeElement.style.height)
     this.aboutPic.nativeElement.style.top = ((window.innerHeight * 0.75 ) - (window.pageYOffset / 2)) + "px";
   }
 }
