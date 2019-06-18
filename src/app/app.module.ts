@@ -20,6 +20,8 @@ import { LandingPageComponent} from './landing-page/landing-page.component';
 import { FrameListComponent } from './frame-list/frame-list.component';
 import { AboutSectionComponent } from './about-section/about-section.component';
 import { AppSectionComponent } from './app-section/app-section.component';
+import { StepsSectionComponent } from './steps-section/steps-section.component';
+import { InstagramSectionComponent } from './instagram-section/instagram-section.component' 
 import { InstagramCarouselComponent } from './instagram-carousel/instagram-carousel.component';
 import { InstagramFeedComponent } from './instagram-feed/instagram-feed.component' 
 
@@ -33,6 +35,8 @@ import { InstagramFeedComponent } from './instagram-feed/instagram-feed.componen
     FrameListComponent,
     AboutSectionComponent,
     AppSectionComponent,
+    StepsSectionComponent,
+    InstagramSectionComponent,
     InstagramCarouselComponent,
     InstagramFeedComponent
   ],

@@ -1,4 +1,4 @@
-.app-container{
+.steps-container{
   font-size: 22px;
   text-align: center;
   position: relative;
@@ -9,28 +9,21 @@
   overflow: hidden;
   background: white;
 }
-.app-heading {
-
-}
-h1 {
-  font-size: 42px;
-  font-weight: 700;
-}
-h2 {
+.list-group {
+  text-align: left;
   font-size: 28px;
-  font-weight: 600;
+  list-style-image: url("../../assets/Images/6DegreesPerfectNewPNG-small.png");
 }
-.colContainer {
-  margin-top: 40px;
-  margin-left: 250px;
-  margin-right: 250px;
+.listItem {
+  padding-bottom: 20px;
 }
-.paragraph {
-  font-size: 24px;
+.iconBullet {
+  height: 40px;
+  width: 40px;
 }
-.app-pic{
+.stepsPic {
   background-size: cover;
   position: fixed;
   width: 100%;
-  z-index: -2;
+  z-index: -3;
 }
