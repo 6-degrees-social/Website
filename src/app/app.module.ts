@@ -10,6 +10,7 @@ import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatButtonModule, MatFormFieldModule} from '@angular/material';
 import { MatInputModule, MatInput } from '@angular/material/input';
 import { disableBodyScroll, enableBodyScroll, } from 'body-scroll-lock';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 import { AppComponent } from './app.component';
 import { NewsletterFormComponent } from './newsletter-form/newsletter-form.component';
@@ -21,6 +22,8 @@ import { AboutSectionComponent } from './about-section/about-section.component';
 import { AppSectionComponent } from './app-section/app-section.component';
 import { StepsSectionComponent } from './steps-section/steps-section.component';
 import { InstagramSectionComponent } from './instagram-section/instagram-section.component' 
+import { InstagramCarouselComponent } from './instagram-carousel/instagram-carousel.component';
+import { InstagramFeedComponent } from './instagram-feed/instagram-feed.component' 
 
 @NgModule({
   declarations: [
@@ -34,6 +37,8 @@ import { InstagramSectionComponent } from './instagram-section/instagram-section
     AppSectionComponent,
     StepsSectionComponent,
     InstagramSectionComponent
+    InstagramCarouselComponent,
+    InstagramFeedComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +51,7 @@ import { InstagramSectionComponent } from './instagram-section/instagram-section
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    SlickCarouselModule
   ],
   providers: [
     CookieService
