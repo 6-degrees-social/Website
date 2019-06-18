@@ -21,6 +21,7 @@ export class FrameListComponent implements OnInit {
   @HostListener("window:resize", [])
   onWindowResize() {
     this.appSectionWrap.nativeElement.style.top = window.innerHeight * 1.4  + "px";
-    this.stepsSectionWrap.nativeElement.style.top = window.innerHeight * 3.2 + "px";
+    this.stepsSectionWrap.nativeElement.style.top = window.innerHeight * 3.22 + "px";
+    this.instaSectionWrap.nativeElement.style.top = window.innerHeight * 5.17 + "px";
   }
 }

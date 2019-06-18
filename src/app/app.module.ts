@@ -36,7 +36,7 @@ import { InstagramFeedComponent } from './instagram-feed/instagram-feed.componen
     AboutSectionComponent,
     AppSectionComponent,
     StepsSectionComponent,
-    InstagramSectionComponent
+    InstagramSectionComponent,
     InstagramCarouselComponent,
     InstagramFeedComponent
   ],
