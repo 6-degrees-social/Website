@@ -57,6 +57,7 @@ export class LandingPageComponent implements OnInit {
   onWindowScroll(){
     document.getElementById("imgToParallax").style.bottom = (window.pageYOffset / 2) + "px";
     document.getElementById("header").style.opacity = ((1 - (window.pageYOffset / window.innerHeight)).toString());
+
     if (window.pageYOffset > window.innerHeight )
       document.getElementById('imgToParallax').style.visibility = 'hidden';
     else
