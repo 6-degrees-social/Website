@@ -1,10 +1,41 @@
 .frame {
-    margin: 20px;
     padding-right: 40px;
     padding-left: 40px;
-    padding-top: 80px;
-    padding-bottom: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     border: 1px solid;
-    background-color: lightgray;
-    box-shadow: 5px 10px 8px 10px #888888;
+    background-color: white;
+    box-shadow: 5px 10px 5px 5px #888888;
+    width: 500px;
+    height: 800px;
+}
+
+.head {
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.frame #instagram-logo {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.frame #logo {
+    height: 80px;
+}
+
+.icons {
+    display: inline-block;
+}
+
+.icons img {
+    height: 30px;
+    width: 30px;
+}
+
+#comment-icon {
+    height: 50px;
+    width: 50px;
 }

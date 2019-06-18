@@ -17,7 +17,11 @@ export class InstagramCarouselComponent implements OnInit {
     "arrows": true,
     "autoplay": true,
     "autoplaySpeed": 2500,
-    "pauseOnHover": true
+    "pauseOnHover": true,
+    "dots": true,
+    // "nextArrow": '<button type="button" class="btn btn-default">Next</button>',
+    // "prevArrow": '<button type="button" class="slick-prev">Previous</button>',
+    // "appendArrows": ''
   };
 
   constructor() { }
