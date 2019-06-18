@@ -16,6 +16,7 @@ interface MailChimpResponse {
 export class NewsletterFormComponent implements OnInit {
 
   @Output() submitEvent: EventEmitter<any> = new EventEmitter();
+  expiredDate = new Date()
   submitted = false;
   mailChimpEndpoint = 'https://gmail.us20.list-manage.com/subscribe/post-json?u=0863c931e41957d9a8cb16e12&amp;id=1bdc22b205&';
   error = '';
@@ -49,8 +50,9 @@ export class NewsletterFormComponent implements OnInit {
         console.log(response);
         console.log('result of response: ' + response.result)
         if (response.result) {
+          this.expiredDate.setDate(this.expiredDate.getDate() + 365)
           this.submitted = true;
-          this.setCookie(this.emailControl.value);
+          this.setCookie(this.emailControl.value, this.expiredDate);
           this.submitEvent.emit(null);
         } else {
           this.error = response.msg;
@@ -63,8 +65,8 @@ export class NewsletterFormComponent implements OnInit {
       console.log('doesn\'t work');
     }
   }
-  setCookie(cEmail) {
-    this._cookieService.set('Email', cEmail);
+  setCookie(cEmail, date) {
+    this._cookieService.set('Email', cEmail, date);
   }
   getErrorMessage() {
     return this.emailControl.hasError('required') ? 'You must enter a value' :
