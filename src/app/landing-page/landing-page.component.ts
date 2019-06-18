@@ -1,4 +1,4 @@
-import {Component, OnInit, Output, EventEmitter, HostListener, Input} from '@angular/core';
+import {Component, OnInit, Output, EventEmitter, HostListener, Input, ViewChild, ElementRef} from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import {trigger, state, style, transition, animate} from '@angular/animations';
 import { disableBodyScroll, enableBodyScroll} from 'body-scroll-lock';
@@ -27,11 +27,10 @@ import { disableBodyScroll, enableBodyScroll} from 'body-scroll-lock';
 })
 export class LandingPageComponent implements OnInit {
   @Output() unlockBodyEvent: EventEmitter<any> = new EventEmitter();
+  @ViewChild('imgToParallax', {read: ElementRef}) private imgToParallax: ElementRef;
+  @ViewChild('header', {read: ElementRef}) private header: ElementRef;
   isSubscribed: boolean = this._cookieService.check("Email");
   show = true;
-
-  @Input('ratio') parallaxRatio : number = 1
-  windowTop: number = 0;
 
   constructor(private _cookieService: CookieService) {
     if (this.isSubscribed) {
@@ -55,13 +54,12 @@ export class LandingPageComponent implements OnInit {
 
   @HostListener("window:scroll")
   onWindowScroll(){
-    document.getElementById("imgToParallax").style.bottom = (window.pageYOffset / 2) + "px";
-    document.getElementById("header").style.opacity = ((1 - (window.pageYOffset / window.innerHeight)).toString());
-
+    this.imgToParallax.nativeElement.style.bottom = (window.pageYOffset / 2) + 'px';
+    this.header.nativeElement.style.opacity = ((1 - (window.pageYOffset / window.innerHeight)).toString());
     if (window.pageYOffset > window.innerHeight )
-      document.getElementById('imgToParallax').style.visibility = 'hidden';
+      this.imgToParallax.nativeElement.style.visibility = 'hidden'
     else
-      document.getElementById('imgToParallax').style.visibility = 'visible';
+      this.imgToParallax.nativeElement.style.visibility = 'visible'
   }
 
   ngOnInit() {}
