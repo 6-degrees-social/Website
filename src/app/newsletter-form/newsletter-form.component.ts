@@ -16,21 +16,22 @@ interface MailChimpResponse {
 export class NewsletterFormComponent implements OnInit {
 
   @Output() submitEvent: EventEmitter<any> = new EventEmitter();
+  @Output() overlayType: EventEmitter<any> = new EventEmitter()
   expiredDate = new Date()
   submitted = false;
   mailChimpEndpoint = 'https://gmail.us20.list-manage.com/subscribe/post-json?u=0863c931e41957d9a8cb16e12&amp;id=1bdc22b205&';
   error = '';
 
-  // tslint:disable-next-line:variable-name
   constructor(private http: HttpClient, private _cookieService: CookieService) { }
 
   emailControl = new FormControl('', [
     Validators.required,
     Validators.email,
   ]);
-  // nameControl = new FormControl('', [
-  //   Validators.required
-  // ]);
+
+  showCookies() {
+    this.overlayType.emit('cookie');
+  }
 
   onSubmit(evt: Event) {
     evt.preventDefault();

@@ -27,6 +27,7 @@ import { disableBodyScroll, enableBodyScroll} from 'body-scroll-lock';
 })
 export class LandingPageComponent implements OnInit {
   @Output() unlockBodyEvent: EventEmitter<any> = new EventEmitter();
+  @Output() showOverlayEvent: EventEmitter<any> = new EventEmitter();
   @ViewChild('imgToParallax', {read: ElementRef}) private imgToParallax: ElementRef;
   @ViewChild('header', {read: ElementRef}) private header: ElementRef;
   isSubscribed: boolean = this._cookieService.check("Email");
@@ -50,6 +51,10 @@ export class LandingPageComponent implements OnInit {
     this.show = !this.show;
     this.unlockBodyEvent.emit(null);
     enableBodyScroll(this.targetElement);
+  }
+
+  showOverlay(evt) {
+    this.showOverlayEvent.emit(evt);
   }
 
   @HostListener("window:scroll")
