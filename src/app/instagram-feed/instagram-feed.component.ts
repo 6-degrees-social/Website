@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InstagramApiService } from './../instagram-api.service';
 import { IRecent_Photo } from '../iinstagramresponse';
-import {ChangeDetectorRef } from '@angular/core';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-instagram-feed',
@@ -36,7 +36,6 @@ export class InstagramFeedComponent implements OnInit {
   }
 
   getAttributes({likes, comments, caption, user}) {
-    if (!name) this.getUser(user);
     this.getCaption(caption);
   }
 
