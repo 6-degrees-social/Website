@@ -41,7 +41,7 @@ import { PhoneCarouselComponent } from './phone-carousel/phone-carousel.componen
     InstagramSectionComponent,
     InstagramCarouselComponent,
     InstagramFeedComponent,
-    PrivacySectionComponent
+    PrivacySectionComponent,
     PhoneCarouselComponent
   ],
   imports: [
