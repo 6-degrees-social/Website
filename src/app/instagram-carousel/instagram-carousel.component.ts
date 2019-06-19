@@ -17,7 +17,8 @@ export class InstagramCarouselComponent implements OnInit {
     "arrows": true,
     "autoplay": true,
     "autoplaySpeed": 2500,
-    "pauseOnHover": true
+    "pauseOnHover": true,
+    "dots": true
   };
 
   constructor() { }

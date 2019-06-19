@@ -1,15 +1,21 @@
 .slick-slider {
-  width: 500px;
-  // margin: auto;
-  // background: #000;
+  width: 300px;
   padding: 5px;
 }
 
 .slick-slider img {
-  height: 500px;
+  height: 250px;
   margin: 0 auto;
   min-width: 100%;
 }
+.slick-prev:before {
+  color: black;
+}
+.slick-next:before {
+  color: black;
+}
+
+  .slick-slide:focus { outline: none; }
 
 
 

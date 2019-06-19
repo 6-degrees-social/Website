@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
-import {Observable, observable} from 'rxjs';
+import {Observable} from 'rxjs';
 import {catchError, tap} from 'rxjs/operators';
 import { IInstagramResponse } from './iinstagramresponse';
 
@@ -8,7 +8,7 @@ import { IInstagramResponse } from './iinstagramresponse';
   providedIn: 'root'
 })
 export class InstagramApiService {
-  private _siteUrl = 'http://localhost:3000/instagram';
+  private _siteUrl = 'https://six-degrees-social.herokuapp.com/instagram';
 
   constructor(private _http: HttpClient) { }
 
