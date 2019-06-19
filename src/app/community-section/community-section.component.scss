@@ -16,7 +16,8 @@
 	text-align: center;
 	-webkit-box-flex: 1;
       -ms-flex: 1;
-          flex: 1
+          flex: 1;
+    margin-bottom: 50px;
 }
 .list-community li:focus,
 .list-community li:hover{
@@ -48,8 +49,4 @@
 
 a {
     text-decoration:  none;
-}
-
-#community-list-mobile{
-	display: none;
 }
