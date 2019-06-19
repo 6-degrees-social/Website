@@ -16,5 +16,9 @@ export class AppSectionComponent implements OnInit {
   @HostListener("window:scroll")
   onWindowScroll(){
     this.appPic.nativeElement.style.top = ((window.innerHeight * 0.75 ) - (window.pageYOffset / 2))  + "px";
+    if (window.pageYOffset > window.innerHeight * 4)
+      this.appPic.nativeElement.style.visibility = 'hidden'
+    else
+      this.appPic.nativeElement.style.visibility = 'visible'
   }
 }
