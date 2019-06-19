@@ -24,6 +24,7 @@ import { StepsSectionComponent } from './steps-section/steps-section.component';
 import { InstagramSectionComponent } from './instagram-section/instagram-section.component' 
 import { InstagramCarouselComponent } from './instagram-carousel/instagram-carousel.component';
 import { InstagramFeedComponent } from './instagram-feed/instagram-feed.component';
+import { PrivacySectionComponent } from './privacy-section/privacy-section.component' 
 import { PhoneCarouselComponent } from './phone-carousel/phone-carousel.component' 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { PhoneCarouselComponent } from './phone-carousel/phone-carousel.componen
     InstagramSectionComponent,
     InstagramCarouselComponent,
     InstagramFeedComponent,
+    PrivacySectionComponent
     PhoneCarouselComponent
   ],
   imports: [
