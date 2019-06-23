@@ -1,4 +1,6 @@
 .app-container{
+  height:700px;
+  margin-top: 500px;
   font-size: 22px;
   text-align: center;
   position: relative;
@@ -8,6 +10,7 @@
   display: block;
   overflow: hidden;
   background: white;
+  height: 700px;
 }
 .app-heading {
 
@@ -22,8 +25,6 @@ h2 {
 }
 .colContainer {
   margin-top: 40px;
-  margin-left: 250px;
-  margin-right: 250px;
 }
 .paragraph {
   font-size: 24px;

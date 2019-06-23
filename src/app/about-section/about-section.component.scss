@@ -9,28 +9,50 @@
   display: block;
   overflow: hidden;
   background: white;
+  height: 500px;
 }
 
 h1 {
   color: black;
-  font-size: 70px;
+  font-size: 62px;
   font-weight: 700;
 }
-@media (min-width: 1700px ) {
-  h1 {
-    font-size: 82px;
-  }
-  p {
-    font-size: 36px;
-  }
+p {
+  font-size: 20px;
 }
 #about-pic{
-  background-size: cover;
+  width: 120%;
+  display: block;
   position: fixed;
-  width: 100%;
-  z-index: -1;
+  height: 90%;
+  z-index: -4;
+  margin-right: -10%;
+  margin-left: -10%;
 }
 .app-link {
   width: 150px;
   margin: 10px;
 }
+@media (min-width: 1440px ) {
+  h1 {
+    font-size: 70px;
+  }
+  p {
+    font-size: 28px;
+  }
+  //#about-pic {
+  //  width: 2000px;
+  //}
+}
+@media (min-width: 1921px ) {
+  h1 {
+    font-size: 106px;
+  }
+  p {
+    font-size: 42px;
+  }
+  //#about-pic {
+  //  width: 2000px;
+  //}
+}
+

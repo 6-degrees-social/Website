@@ -7,14 +7,23 @@ import {Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/c
 })
 export class StepsSectionComponent implements OnInit {
   @ViewChild('stepsPic', {read: ElementRef}) private stepsPic: ElementRef;
-
   constructor() { }
 
   ngOnInit() {
-    this.stepsPic.nativeElement.style.marginTop = (window.innerHeight * 1.7) + 'px';
+
+  }
+  getTop() {
+    if (window.innerWidth > 1400)
+      return 2050;
+    else if (window.innerWidth > 700)
+      return 2100;
   }
   @HostListener("window:scroll")
   onWindowScroll(){
-    this.stepsPic.nativeElement.style.top = ((window.innerHeight * 0.75 ) - (window.pageYOffset / 2))  + "px";
+    this.stepsPic.nativeElement.style.top = ((window.innerHeight + 2000) - (window.pageYOffset / 1.3))  + "px";
+    // if (window.pageYOffset < (window.innerHeight * 2) + 560)
+    //   this.stepsPic.nativeElement.style.visibility = 'hidden'
+    // else
+    //   this.stepsPic.nativeElement.style.visibility = 'visible'
   }
 }

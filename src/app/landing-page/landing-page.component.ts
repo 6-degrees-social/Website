@@ -2,6 +2,7 @@ import {Component, OnInit, Output, EventEmitter, HostListener, Input, ViewChild,
 import { CookieService } from 'ngx-cookie-service';
 import {trigger, state, style, transition, animate} from '@angular/animations';
 import { disableBodyScroll, enableBodyScroll} from 'body-scroll-lock';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Component({
   selector: 'app-landing-page',
@@ -28,18 +29,28 @@ import { disableBodyScroll, enableBodyScroll} from 'body-scroll-lock';
 export class LandingPageComponent implements OnInit {
   @Output() unlockBodyEvent: EventEmitter<any> = new EventEmitter();
   @Output() showOverlayEvent: EventEmitter<any> = new EventEmitter();
+  @ViewChild('overlay', {read: ElementRef}) private Overlay: ElementRef;
   @ViewChild('imgToParallax', {read: ElementRef}) private imgToParallax: ElementRef;
   @ViewChild('header', {read: ElementRef}) private header: ElementRef;
   isSubscribed: boolean = this._cookieService.check("Email");
   show = true;
 
-  constructor(private _cookieService: CookieService) {
+  constructor(private _cookieService: CookieService, http: HttpClient ) {
     if (this.isSubscribed) {
       enableBodyScroll(this.targetElement)
     }
     else {
       disableBodyScroll(this.targetElement);
     }
+  }
+  getPolicy(evt) {
+    let url = ''
+    if (evt == 'cookie')
+      url = 'https://www.iubenda.com/privacy-policy/11781988/cookie-policy'
+    else
+      url = 'https://www.iubenda.com/privacy-policy/11781988'
+    const windowFeatures = 'toolbar=no, location=no, directories=no, status=no, menubar=no, titlebar=no, scrollbars=no, resizable=no, ';
+    window.open(url, 'Privacy Policy', windowFeatures+' width='+ window.innerWidth/2 +', height='+ window.innerHeight/2 +', top='+ window.innerHeight/4 +', left='+ window.innerWidth/4)
   }
 
   get stateName() {
@@ -54,6 +65,7 @@ export class LandingPageComponent implements OnInit {
   }
 
   showOverlay(evt) {
+    this.Overlay.nativeElement.style.display = 'block'
     this.showOverlayEvent.emit(evt);
   }
 

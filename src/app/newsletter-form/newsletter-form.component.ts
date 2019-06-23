@@ -29,8 +29,13 @@ export class NewsletterFormComponent implements OnInit {
     Validators.email,
   ]);
 
-  showCookies() {
+  showCookies(evt) {
+    evt.preventDefault()
     this.overlayType.emit('cookie');
+  }
+  showPolicy(evt) {
+    evt.preventDefault();
+    this.overlayType.emit('policy');
   }
 
   onSubmit(evt: Event) {
