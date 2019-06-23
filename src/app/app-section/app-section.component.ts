@@ -7,18 +7,19 @@ import {Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/c
 })
 export class AppSectionComponent implements OnInit {
   @ViewChild('appPic', {read: ElementRef}) private appPic: ElementRef;
+  getTop:number = 1100;
   constructor() { }
 
   ngOnInit() {
-    this.appPic.nativeElement.style.marginTop = (window.innerHeight * 0.6) + 'px';
+
   }
 
   @HostListener("window:scroll")
   onWindowScroll(){
-    this.appPic.nativeElement.style.top = ((window.innerHeight * 0.75 ) - (window.pageYOffset / 2))  + "px";
-    if (window.pageYOffset > window.innerHeight * 4)
-      this.appPic.nativeElement.style.visibility = 'hidden'
-    else
-      this.appPic.nativeElement.style.visibility = 'visible'
+    this.appPic.nativeElement.style.top = ((window.innerHeight + this.getTop) - (window.pageYOffset / 1.3)) + "px";
+    // if (window.pageYOffset < window.innerHeight + 560)
+    //   this.appPic.nativeElement.style.visibility = 'hidden'
+    // else
+    //   this.appPic.nativeElement.style.visibility = 'visible'
   }
 }

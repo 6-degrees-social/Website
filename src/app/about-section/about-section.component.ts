@@ -13,12 +13,16 @@ export class AboutSectionComponent implements OnInit {
 
   }
 
+  getTop() {
+    return 150
+  }
+
   @HostListener("window:scroll")
   onWindowScroll(){
-    this.aboutPic.nativeElement.style.top = ((window.innerHeight * 0.75 ) - (window.pageYOffset / 2)) + "px";
-    if (window.pageYOffset > window.innerHeight * 2.5)
-      this.aboutPic.nativeElement.style.visibility = 'hidden'
-    else
-      this.aboutPic.nativeElement.style.visibility = 'visible'
+    this.aboutPic.nativeElement.style.top = ((window.innerHeight + this.getTop()) - (window.pageYOffset / 1.3)) + "px";
+    // if (window.pageYOffset > window.innerHeight * 2.5)
+    //   this.aboutPic.nativeElement.style.visibility = 'hidden'
+    // else
+    //   this.aboutPic.nativeElement.style.visibility = 'visible'
   }
 }

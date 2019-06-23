@@ -1,4 +1,6 @@
 .steps-container{
+  height: 700px;
+  margin-top: 500px;
   font-size: 22px;
   text-align: center;
   position: relative;
@@ -10,12 +12,31 @@
   background: white;
 }
 .list-group {
-  text-align: left;
   font-size: 28px;
   list-style-image: url("../../assets/Images/6DegreesPerfectNewPNG-small.png");
 }
-.listItem {
-  padding-bottom: 20px;
+
+@media (max-width: 2180px ) {
+  .list-group {
+    font-size: 24px;
+  }
+}
+@media (max-width: 1860px ) {
+  .list-group {
+    font-size: 20px;
+  }
+}
+@media (max-width: 1475px) {
+  .img {
+    visibility: hidden;
+    display: none;
+  }
+  .list-group {
+    margin-right: 0px;
+  }
+  .list-group-item {
+    text-align: left;
+  }
 }
 .iconBullet {
   height: 40px;
@@ -25,5 +46,5 @@
   background-size: cover;
   position: fixed;
   width: 100%;
-  z-index: -3;
+  z-index: -1;
 }

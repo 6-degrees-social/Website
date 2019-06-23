@@ -32,23 +32,25 @@ export class LandingPageComponent implements OnInit {
   @ViewChild('overlay', {read: ElementRef}) private Overlay: ElementRef;
   @ViewChild('imgToParallax', {read: ElementRef}) private imgToParallax: ElementRef;
   @ViewChild('header', {read: ElementRef}) private header: ElementRef;
-  policyTemplate: any = '';
   isSubscribed: boolean = this._cookieService.check("Email");
   show = true;
 
-  constructor(private _cookieService: CookieService,private http:HttpClient ) {
-    let headers = new HttpHeaders({
-      'Accept':'text/html',
-      'XFF':'testing123'
-    });
-
-    console.log(http.get('https://www.iubenda.com/privacy-policy/11781988/cookie-policy'), {headers: headers})
+  constructor(private _cookieService: CookieService, http: HttpClient ) {
     if (this.isSubscribed) {
       enableBodyScroll(this.targetElement)
     }
     else {
       disableBodyScroll(this.targetElement);
     }
+  }
+  getPolicy(evt) {
+    let url = ''
+    if (evt == 'cookie')
+      url = 'https://www.iubenda.com/privacy-policy/11781988/cookie-policy'
+    else
+      url = 'https://www.iubenda.com/privacy-policy/11781988'
+    const windowFeatures = 'toolbar=no, location=no, directories=no, status=no, menubar=no, titlebar=no, scrollbars=no, resizable=no, ';
+    window.open(url, 'Privacy Policy', windowFeatures+' width='+ window.innerWidth/2 +', height='+ window.innerHeight/2 +', top='+ window.innerHeight/4 +', left='+ window.innerWidth/4)
   }
 
   get stateName() {
