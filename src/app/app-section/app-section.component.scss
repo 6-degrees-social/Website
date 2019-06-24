@@ -30,8 +30,13 @@ h2 {
   font-size: 24px;
 }
 .app-pic{
-  background-size: cover;
   position: fixed;
-  width: 100%;
+  width: calc(250vh);
+  left: 50%;
+  margin-left: -125vh;
   z-index: -2;
+  overflow: hidden;
+}
+.pic-Container {
+  overflow: hidden;
 }
