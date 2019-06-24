@@ -15,18 +15,60 @@
   font-size: 28px;
   list-style-image: url("../../assets/Images/6DegreesPerfectNewPNG-small.png");
 }
-
+.stepsPic {
+  position: fixed;
+  width: calc(250vh);
+  left: 50%;
+  margin-left: -125vh;
+  z-index: -1;
+}
+.iconBullet {
+  height: 40px;
+  width: 40px;
+}
+.stepsPic {
+  position: fixed;
+  width: calc(250vh);
+  left: 50%;
+  margin-left: -125vh;
+  z-index: -1;
+}
+.pic-Container {
+  overflow: hidden;
+}
 @media (max-width: 2180px ) {
+  .stepsPic {
+    position: fixed;
+    width: calc(280vh);
+    left: 50%;
+    margin-left: -140vh;
+    z-index: -1;
+  }
   .list-group {
     font-size: 24px;
   }
 }
 @media (max-width: 1860px ) {
+  .stepsPic {
+    position: fixed;
+    width: calc(250vh);
+    left: 50%;
+    margin-left: -125vh;
+    z-index: -1;
+  }
+
   .list-group {
     font-size: 20px;
   }
 }
 @media (max-width: 1475px) {
+  .stepsPic {
+    position: fixed;
+    width: calc(250vh);
+    left: 50%;
+    margin-left: -125vh;
+    z-index: -1;
+  }
   .img {
     visibility: hidden;
     display: none;
@@ -37,14 +79,4 @@
   .list-group-item {
     text-align: left;
   }
-}
-.iconBullet {
-  height: 40px;
-  width: 40px;
-}
-.stepsPic {
-  background-size: cover;
-  position: fixed;
-  width: 100%;
-  z-index: -1;
 }

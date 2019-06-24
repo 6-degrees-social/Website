@@ -21,13 +21,12 @@ p {
   font-size: 20px;
 }
 #about-pic{
-  width: 120%;
-  display: block;
+  overflow: hidden;
   position: fixed;
-  height: 90%;
+  width: calc(250vh);
+  left: 50%;
+  margin-left: -125vh;
   z-index: -4;
-  margin-right: -10%;
-  margin-left: -10%;
 }
 .app-link {
   width: 150px;
@@ -51,8 +50,8 @@ p {
   p {
     font-size: 42px;
   }
-  //#about-pic {
-  //  width: 2000px;
-  //}
+}
+.pic-Container {
+  overflow: hidden;
 }
 
