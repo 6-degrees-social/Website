@@ -1,7 +1,6 @@
-
-  <div class="navClass"><app-navbar></app-navbar></div>
-  <app-landing-page></app-landing-page>
-  <app-frame-list class="h-25"></app-frame-list>
+<div class="navClass"><app-navbar [frameSections]="sections"></app-navbar></div>
+<app-landing-page></app-landing-page>
+<app-frame-list class="h-25" id="frame" (frames)="getFrames($event)"></app-frame-list>
 
 
 
