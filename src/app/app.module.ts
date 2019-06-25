@@ -26,7 +26,8 @@ import { InstagramCarouselComponent } from './instagram-carousel/instagram-carou
 import { InstagramFeedComponent } from './instagram-feed/instagram-feed.component';
 import { PrivacySectionComponent } from './privacy-section/privacy-section.component' 
 import { PhoneCarouselComponent } from './phone-carousel/phone-carousel.component';
-import { CommunitySectionComponent } from './community-section/community-section.component' 
+import { CommunitySectionComponent } from './community-section/community-section.component';
+import { FooterComponent } from './footer/footer.component' 
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { CommunitySectionComponent } from './community-section/community-section
     InstagramFeedComponent,
     PrivacySectionComponent,
     PhoneCarouselComponent,
-    CommunitySectionComponent
+    CommunitySectionComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

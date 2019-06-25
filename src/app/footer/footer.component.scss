@@ -1,0 +1,23 @@
+footer {
+    margin-top: 20px;
+    margin-right: 20px;
+    font-size: 14px;
+    color: #656b6f;
+    position: relative;
+    height: 100px;
+}
+
+img {
+    height: 50px;
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    margin-left: 10px;  
+}
+
+#copyright-text {
+    display: inline-block;
+    right: 10px;
+    position: absolute;
+    bottom: 0;
+}
