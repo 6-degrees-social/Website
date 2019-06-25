@@ -27,7 +27,8 @@ import { InstagramFeedComponent } from './instagram-feed/instagram-feed.componen
 import { PrivacySectionComponent } from './privacy-section/privacy-section.component' 
 import { PhoneCarouselComponent } from './phone-carousel/phone-carousel.component';
 import { CommunitySectionComponent } from './community-section/community-section.component';
-import { FooterComponent } from './footer/footer.component' 
+import { FooterComponent } from './footer/footer.component';
+import { RoutingModule } from './routing.module' 
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { FooterComponent } from './footer/footer.component'
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    SlickCarouselModule
+    SlickCarouselModule,
+    RoutingModule
   ],
   providers: [
     CookieService
