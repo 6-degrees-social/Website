@@ -12,7 +12,21 @@
 }
 .paragraph {
   text-align: left;
-  margin-top: 50px;
-  margin-left: 10vw;
+  font-size: 26px;
 }
+.container-fluid {
+  width: 80%;
+}
+.app-community-section {
+  width: 300px;
+}
+.social-link {
+  height: 60px;
+  text-align: center;
+}
+.social-col {
+  width: 70px !important;
+  padding-left: -20px;
+}
+
 
