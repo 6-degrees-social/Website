@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,11 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit { 
   title = 'sixdegrees-website';
+  sections;
 
-  constructor() {
-
-  }
+  constructor(private cdref: ChangeDetectorRef) { }
 
   ngOnInit(){
+  }
+
+  getFrames(evt) {
+    this.sections = evt;
+    this.cdref.detectChanges();
   }
 }

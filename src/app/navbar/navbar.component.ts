@@ -1,6 +1,5 @@
 import { state, trigger, style, transition, animate } from '@angular/animations';
-import { element } from 'protractor';
-import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
+import { Component, OnInit, HostListener, ElementRef, ViewChild, Input, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -22,12 +21,24 @@ import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
     ]),
   ]
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit, AfterViewInit {
   currentState = 'initial';
   state = true;
-  constructor(public el: ElementRef) { }
+  @Input() frameSections;
+
+  constructor() { }
 
   ngOnInit() {
+
+  }
+
+  ngAfterViewInit() {
+    setTimeout(() => {
+      console.log(this.frameSections[2].nativeElement);
+      this.frameSections[1].nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    }, 0);
+
   }
 
   @HostListener("window:scroll", [])
@@ -38,5 +49,11 @@ export class NavbarComponent implements OnInit {
     } else {
       this.currentState = "initial";
     }    
+  }
+  
+  scroll(evt: Event) {
+    evt.preventDefault();
+    console.log(evt)
+    // return false
   }
 }
