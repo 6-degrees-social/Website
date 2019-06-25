@@ -45,3 +45,19 @@ h2 {
   height:315px;
   margin: 10%
 }
+@media (max-width: 769px) {
+  .app-para-container {
+    display: none;
+  }
+  .app-video {
+    width: 100vw;
+    height: 70vh;
+    top: 50%;
+  }
+  .app-container {
+    height: unset;
+  }
+  .container-fluid {
+    width: unset;
+  }
+}

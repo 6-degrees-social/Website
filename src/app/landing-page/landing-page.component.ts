@@ -12,7 +12,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
     trigger('collapseForm', [
       state('show', style({})),
       state('hide', style({
-        transform: 'translatey(-500px)'
+        transform: 'translatey(-200vh)'
       })),
       transition('show => hide',animate('700ms ease-out'))
     ]),
@@ -71,7 +71,7 @@ export class LandingPageComponent implements OnInit {
 
   @HostListener("window:scroll")
   onWindowScroll(){
-    this.imgToParallax.nativeElement.style.bottom = (window.pageYOffset / 2) + 'px';
+    this.imgToParallax.nativeElement.style.top = (-window.pageYOffset / 2) + 'px';
     this.header.nativeElement.style.opacity = ((1 - (window.pageYOffset / window.innerHeight)).toString());
     if (window.pageYOffset > window.innerHeight )
       this.imgToParallax.nativeElement.style.visibility = 'hidden'
