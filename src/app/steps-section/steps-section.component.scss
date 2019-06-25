@@ -11,6 +11,9 @@
   overflow: hidden;
   background: white;
 }
+.container-fluid {
+  width: 80%;
+}
 .list-group {
   font-size: 28px;
   list-style-image: url("../../assets/Images/6DegreesPerfectNewPNG-small.png");
@@ -49,6 +52,13 @@
   }
 }
 @media (max-width: 1860px ) {
+  h1 {
+    font-size: 36px;
+    font-weight: 700;
+  }
+  h2 {
+    font-size: 26px;
+  }
   .stepsPic {
     position: fixed;
     width: calc(250vh);
@@ -61,7 +71,8 @@
     font-size: 20px;
   }
 }
-@media (max-width: 1475px) {
+@media (max-width: 800px) {
+
   .stepsPic {
     position: fixed;
     width: calc(250vh);
