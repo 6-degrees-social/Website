@@ -21,23 +21,14 @@ import { Component, OnInit, HostListener, ElementRef, ViewChild, Input, AfterVie
     ]),
   ]
 })
-export class NavbarComponent implements OnInit, AfterViewInit {
+export class NavbarComponent implements OnInit {
   currentState = 'initial';
   state = true;
-  @Input() frameSections;
+  @Input() frameSections: ElementRef[];
 
   constructor() { }
 
   ngOnInit() {
-
-  }
-
-  ngAfterViewInit() {
-    setTimeout(() => {
-      console.log(this.frameSections[2].nativeElement);
-      this.frameSections[1].nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-    }, 0);
 
   }
 
@@ -51,9 +42,7 @@ export class NavbarComponent implements OnInit, AfterViewInit {
     }    
   }
   
-  scroll(evt: Event) {
-    evt.preventDefault();
-    console.log(evt)
-    // return false
+  scroll(num) {
+    this.frameSections[num].nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 }

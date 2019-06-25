@@ -3,11 +3,9 @@
   <a class="navbar-brand mb-0 h1" href="#" id="logoWord">6 Degrees</a>
   <ul class="navbar-nav ml-auto">
     <li class="nav-item">
-        <button href="#about-section" class="btn btn-success" >Download</button>
-        <a href="{{frameSections[0].natvieElement}}" rel="no-refresh">example</a>
-        <a href="{{frameSections[2].natvieElement}}" rel="no-refresh">example</a>
-        <button href="{{" class="btn btn-success">Follow</button>
-        <button href="#" class="btn btn-success">Contact</button>
+        <button (click)="scroll(0)" class="btn btn-success" >Download</button>
+        <button (click)="scroll(1)" class="btn btn-success">Follow</button>
+        <button (click)="scroll(2)" class="btn btn-success">Contact</button>
     </li>
   </ul>
 </nav>
