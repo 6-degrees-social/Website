@@ -40,16 +40,13 @@ export class NewsletterFormComponent implements OnInit {
     if (this.emailControl.status === 'VALID') {
       console.log('works')
       const params = new HttpParams()
-        // .set('FNAME', this.nameControl.value)
         .set('EMAIL', this.emailControl.value)
         .set('b_0863c931e41957d9a8cb16e12_1bdc22b205', '');
 
       const mailChimpUrl = this.mailChimpEndpoint + params.toString();
-      console.log(mailChimpUrl);
+      // console.log(mailChimpUrl);
 
       this.http.jsonp<MailChimpResponse>(mailChimpUrl, 'c').subscribe(response => {
-        // console.log(response);
-        // console.log('result of response: ' + response.result)
         if (response.result) {
           this.expiredDate.setDate(this.expiredDate.getDate() + 365)
           this.submitted = true;
@@ -66,9 +63,11 @@ export class NewsletterFormComponent implements OnInit {
       console.log('doesn\'t work');
     }
   }
+
   setCookie(cEmail, date) {
     this._cookieService.set('Email', cEmail, date);
   }
+
   getErrorMessage() {
     return this.emailControl.hasError('required') ? 'You must enter a value' :
         this.emailControl.hasError('email') ? 'Not a valid email' :
