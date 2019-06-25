@@ -32,7 +32,7 @@ export class InstagramFeedComponent implements OnInit {
 
   getSlideNum(slideNum) {
     this.current = this.instagramObjects[slideNum];
-    this.getAttributes(this.current)
+    this.getAttributes(this.current);
   }
 
   getAttributes({likes, comments, caption, user}) {

@@ -53,8 +53,8 @@ export class NewsletterFormComponent implements OnInit {
       console.log(mailChimpUrl);
 
       this.http.jsonp<MailChimpResponse>(mailChimpUrl, 'c').subscribe(response => {
-        console.log(response);
-        console.log('result of response: ' + response.result)
+        // console.log(response);
+        // console.log('result of response: ' + response.result)
         if (response.result) {
           this.expiredDate.setDate(this.expiredDate.getDate() + 365)
           this.submitted = true;
