@@ -45,6 +45,15 @@ h2 {
   height:315px;
   margin: 10%
 }
+@media (max-width: 1200px) {
+  .container-fluid {
+    width: 100%;
+  }
+  .paragraph {
+    font-size: 22px;
+    margin-left: 10px;
+  }
+}
 @media (max-width: 769px) {
   .app-para-container {
     display: none;
@@ -55,6 +64,7 @@ h2 {
     top: 50%;
   }
   .app-container {
+    margin-top: 400px;
     height: unset;
   }
   .container-fluid {

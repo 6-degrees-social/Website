@@ -7,22 +7,17 @@ import {Component, ElementRef, HostListener, OnInit, AfterViewInit, ViewChild} f
 })
 export class AboutSectionComponent implements OnInit {
   @ViewChild('aboutPic', {read: ElementRef}) private aboutPic: ElementRef;
+  getTop:number = window.innerHeight < window.innerWidth ? 150 : 110
+  getMultiplier = () => window.innerHeight < window.innerWidth ? 0 : (window.innerHeight / 2)
+
   constructor() { }
+
 
   ngOnInit() {
 
   }
-
-  getTop() {
-    return 150
-  }
-
   @HostListener("window:scroll")
   onWindowScroll(){
-    this.aboutPic.nativeElement.style.top = ((window.innerHeight + this.getTop()) - (window.pageYOffset / 1.3)) + "px";
-    // if (window.pageYOffset > window.innerHeight * 2.5)
-    //   this.aboutPic.nativeElement.style.visibility = 'hidden'
-    // else
-    //   this.aboutPic.nativeElement.style.visibility = 'visible'
+    this.aboutPic.nativeElement.style.top = ((window.innerHeight + this.getTop) - (window.pageYOffset + (this.getMultiplier()))  / 1.3) + "px";
   }
 }

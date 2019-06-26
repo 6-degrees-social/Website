@@ -21,11 +21,34 @@
   width: 300px;
 }
 .social-link {
-  margin-left: 5px;
+  margin-left: 20px;
+}
+.mobile-links {
+  visibility: hidden;
+}
+@media (max-width: 1200px) {
+  .container-fluid {
+    width: 100%;
+  }
+  .paragraph {
+    font-size: 24px;
+    margin-left: 10px;
+  }
 }
 @media (max-width: 769px) {
+  .insta-container {
+    margin-top: 400px;
+  }
   .para-section {
     display: none;
+  }
+  .app-instagram-view {
+    width: 100vw;
+    left: 10%;
+    top: 50%;
+  }
+  .mobile-links {
+    visibility: visible;
   }
 }
 
