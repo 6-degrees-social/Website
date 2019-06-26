@@ -26,19 +26,17 @@ h2 {
   margin-top: 40px;
 }
 .paragraph {
+  margin-top: 20px;
   text-align: left;
   font-size: 26px;
 }
 .app-pic{
-  position: fixed;
-  width: calc(250vh);
+  position: absolute;
+  height: 600px;
+  width: 100%;
   left: 50%;
-  margin-left: -125vh;
+  margin-left: -50%;
   z-index: -2;
-  overflow: hidden;
-}
-.pic-Container {
-  overflow: hidden;
 }
 .video {
   width:560px;
@@ -55,6 +53,14 @@ h2 {
   }
 }
 @media (max-width: 769px) {
+  .app-pic{
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    margin-left: -50%;
+    z-index: -2;
+    overflow: hidden;
+  }
   .app-para-container {
     display: none;
   }
@@ -65,7 +71,6 @@ h2 {
   }
   .app-container {
     margin-top: 400px;
-    height: unset;
   }
   .container-fluid {
     width: unset;
