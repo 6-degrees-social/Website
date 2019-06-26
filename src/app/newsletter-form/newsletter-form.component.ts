@@ -19,7 +19,7 @@ export class NewsletterFormComponent implements OnInit {
   @Output() overlayType: EventEmitter<any> = new EventEmitter()
   expiredDate = new Date()
   submitted = false;
-  mailChimpEndpoint = 'https://gmail.us20.list-manage.com/subscribe/post-json?u=0863c931e41957d9a8cb16e12&amp;id=1bdc22b205&';
+  mailChimpEndpoint = 'https://social.us18.list-manage.com/subscribe/post-json?u=79c889801f459f248870e1d51&amp;id=482e7627ed&';
   error = '';
 
   constructor(private http: HttpClient, private _cookieService: CookieService) { }
@@ -43,13 +43,11 @@ export class NewsletterFormComponent implements OnInit {
     this.error = '';
 
     if (this.emailControl.status === 'VALID') {
-      console.log('works')
       const params = new HttpParams()
         .set('EMAIL', this.emailControl.value)
-        .set('b_0863c931e41957d9a8cb16e12_1bdc22b205', '');
+        .set('b_79c889801f459f248870e1d51_482e7627ed', '');
 
       const mailChimpUrl = this.mailChimpEndpoint + params.toString();
-      // console.log(mailChimpUrl);
 
       this.http.jsonp<MailChimpResponse>(mailChimpUrl, 'c').subscribe(response => {
         if (response.result) {
