@@ -21,19 +21,24 @@ h1 {
 p {
   font-size: 20px;
 }
+.pic-Container {
+  width: 100%;
+}
 #about-pic{
-  overflow: hidden;
-  position: fixed;
-  width: calc(250vh);
+  width: 100%;
+  height: 600px;
+  position: absolute;
   left: 50%;
-  margin-left: -125vh;
+  margin-left: -50%;
   z-index: -4;
 }
 .app-link {
   width: 150px;
   margin: 10px;
 }
-.pic-Container {
+
+hideOverflow {
+  clear: both;
   overflow: hidden;
 }
 @media (min-width: 1440px ) {

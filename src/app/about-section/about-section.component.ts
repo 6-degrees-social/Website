@@ -7,9 +7,6 @@ import {Component, ElementRef, HostListener, OnInit, AfterViewInit, ViewChild} f
 })
 export class AboutSectionComponent implements OnInit {
   @ViewChild('aboutPic', {read: ElementRef}) private aboutPic: ElementRef;
-  getTop:number = window.innerHeight < window.innerWidth ? 150 : 110
-  getMultiplier = () => window.innerHeight < window.innerWidth ? 0 : (window.innerHeight / 2)
-
   constructor() { }
 
 
@@ -18,6 +15,6 @@ export class AboutSectionComponent implements OnInit {
   }
   @HostListener("window:scroll")
   onWindowScroll(){
-    this.aboutPic.nativeElement.style.top = ((window.innerHeight + this.getTop) - (window.pageYOffset + (this.getMultiplier()))  / 1.3) + "px";
+    this.aboutPic.nativeElement.style.marginTop = (window.pageYOffset / 6) - 250 + "px";
   }
 }

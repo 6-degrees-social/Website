@@ -43,6 +43,7 @@ export class LandingPageComponent implements OnInit {
       disableBodyScroll(this.targetElement);
     }
   }
+
   getPolicy(evt) {
     let url = ''
     if (evt == 'cookie')
@@ -69,14 +70,12 @@ export class LandingPageComponent implements OnInit {
     this.showOverlayEvent.emit(evt);
   }
 
+  isLandscape = () => window.innerHeight < window.innerWidth
   @HostListener("window:scroll")
   onWindowScroll(){
-    this.imgToParallax.nativeElement.style.top = (-window.pageYOffset / 2) + 'px';
+    this.imgToParallax.nativeElement.style.top = (-window.pageYOffset / 1.5) + 'px';
     this.header.nativeElement.style.opacity = ((1 - (window.pageYOffset / window.innerHeight)).toString());
-    if (window.pageYOffset > window.innerHeight )
-      this.imgToParallax.nativeElement.style.visibility = 'hidden'
-    else
-      this.imgToParallax.nativeElement.style.visibility = 'visible'
+    console.log(window.pageYOffset + ' ' + (window.innerHeight / 2))
   }
 
   ngOnInit() {}
