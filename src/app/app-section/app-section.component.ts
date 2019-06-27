@@ -15,6 +15,6 @@ export class AppSectionComponent implements OnInit {
 
   @HostListener("window:scroll")
   onWindowScroll(){
-    this.appPic.nativeElement.style.marginTop = (window.pageYOffset / 6) - 420 + "px";
+    this.appPic.nativeElement.style.marginTop = (window.pageYOffset / 6) - 360 + "px";
   }
 }

@@ -1,5 +1,5 @@
 .steps-container{
-  height: 700px;
+  height: 750px;
   margin-top: 500px;
   font-size: 22px;
   text-align: center;
@@ -14,11 +14,12 @@
 .container-fluid {
   width: 80%;
 }
-.list-group {
-  font-size: 28px;
-  list-style-image: url("../../assets/Images/6DegreesPerfectNewPNG-small.png");
+.list-unstyled {
+  font-size: 22px;
 }
-
+.list-item {
+  margin-bottom: 12px;
+}
 .stepsPic {
   width: 100%;
   height: 600px;
@@ -27,16 +28,29 @@
   margin-left: -50%;
   z-index: -1;
 }
+.links-mobile {
+  display: none;
+}
 .iconBullet {
   height: 40px;
   width: 40px;
 }
+.app-link {
+  width: 150px;
+  margin: 10px;
+}
+.app-wrap {
+  display: inline-block;
+}
+
 h1 {
   font-size: 36px;
   font-weight: 700;
 }
 h2 {
-  font-size: 26px;
+  margin-right: -5px;
+  margin-left: -5px;
+  font-size: 22px;
 }
 @media (max-width: 2180px ) {
   .list-group {
@@ -62,8 +76,8 @@ h2 {
 }
 @media (max-width: 769px) {
   .steps-container {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    margin-top: 400px;
+    height: 920px;
   }
   .container-fluid {
     width: unset;
@@ -76,6 +90,16 @@ h2 {
   }
   .stepsList {
     display: none;
+  }
+  .links-desktop {
+    display: none;
+    text-align: center;
+  }
+  .links-mobile {
+    margin: 50px 0px 0px;
+    width: 100%;
+    text-align: center;
+    display: unset;
   }
   .list-group {
     margin-right: 0px;

@@ -59,7 +59,6 @@ export class LandingPageComponent implements OnInit {
   }
 
   collapse() {
-    console.log('collapse method')
     this.show = !this.show;
     this.unlockBodyEvent.emit(null);
     enableBodyScroll(this.targetElement);
@@ -75,7 +74,6 @@ export class LandingPageComponent implements OnInit {
   onWindowScroll(){
     this.imgToParallax.nativeElement.style.top = (-window.pageYOffset / 1.5) + 'px';
     this.header.nativeElement.style.opacity = ((1 - (window.pageYOffset / window.innerHeight)).toString());
-    console.log(window.pageYOffset + ' ' + (window.innerHeight / 2))
   }
 
   ngOnInit() {}
