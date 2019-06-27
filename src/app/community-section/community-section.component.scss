@@ -1,4 +1,8 @@
-
+h1 {
+  color: black;
+  font-size: 62px;
+  font-weight: 700;
+}
 
 .list-community{
 	margin: 0;
@@ -49,4 +53,9 @@
 
 a {
     text-decoration:  none;
+}
+@media (max-width: 769px) {
+  h1 {
+    font-size: 42px;
+  }
 }

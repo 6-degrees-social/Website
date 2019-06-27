@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style';*/
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
-@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import 'customize-bootstrap.sass';
+@import "customize-bootstrap.scss";
 
 .container-fluid{
     width: calc(100% - 2 * 32px);
