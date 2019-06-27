@@ -1,4 +1,17 @@
+.container {
+	background-color: #48494b;
+	padding-top: 20px;
+}
 
+h1 {
+	color: white;
+}
+
+.contain {
+	background-color: #48494b;
+	width: 100%;
+	margin: 0;
+}
 
 .list-community{
 	margin: 0;
@@ -19,17 +32,18 @@
 	-webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-    margin-bottom: 50px;
+	margin-bottom: 50px;
+	background-color: #48494b;
 }
 .list-community li:focus,
 .list-community li:hover{
-	-webkit-box-shadow: 0 0 10px 1px rgba(0,0,0,0.15);
+	-webkit-box-shadow: 0 0 10px 1px rgba(155, 143, 143, 0.15);
 	box-shadow: 0 0 10px 1px rgba(0,0,0,0.15);
 }
 
 .list-community li p{
 	font-size: 18px;
-	color: #656b6f;
+	color: White;
 	margin: 0 0 50px 0;
 }
 
@@ -37,7 +51,7 @@
 	margin: 0 0 10px 0;
 	font-size: 12px;
 	font-weight: bold;
-	color: #3c3d41;	
+	color: #656b6f;	
 	text-transform: uppercase;
 }
 
@@ -49,4 +63,9 @@
 
 a {
     text-decoration:  none;
+}
+
+img {
+	height: 117px;
+	width: 117px;
 }
