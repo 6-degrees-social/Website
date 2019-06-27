@@ -7,8 +7,6 @@ import {Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/c
 })
 export class StepsSectionComponent implements OnInit {
   @ViewChild('stepsPic', {read: ElementRef}) private stepsPic: ElementRef;
-  getTop:number = window.innerHeight < window.innerWidth ? 2000 : 1955;
-  getMultiplier = () => window.innerHeight < window.innerWidth ? 0 : (window.innerHeight / 2)
 
   constructor() { }
 

@@ -10,7 +10,15 @@
 #logoWord{
     color: Black;
 }
-// nav {
-//     padding: 0;
-// }
+.btn-success, .btn-success:active, .btn-success:visited {
+  background-color: #92af65 !important;
+  border-color: #92af65 !important;
+  animation-name: btn-hover;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
 
+.btn-success:hover {
+  filter: brightness(60%);
+  transition: filter 1.5s;
+}
