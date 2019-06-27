@@ -1,5 +1,5 @@
 .steps-container{
-  height: 700px;
+  height: 750px;
   margin-top: 500px;
   font-size: 22px;
   text-align: center;
@@ -14,11 +14,12 @@
 .container-fluid {
   width: 80%;
 }
-.list-group {
-  font-size: 28px;
-  list-style-image: url("../../assets/Images/6DegreesPerfectNewPNG-small.png");
+.list-unstyled {
+  font-size: 22px;
 }
-
+.list-item {
+  margin-bottom: 12px;
+}
 .stepsPic {
   width: 100%;
   height: 600px;
