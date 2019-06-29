@@ -36,12 +36,12 @@ export class LandingPageComponent implements OnInit {
   show = true;
 
   constructor(private _cookieService: CookieService, http: HttpClient ) {
-    if (this.isSubscribed) {
-      enableBodyScroll(this.targetElement)
-    }
-    else {
-      disableBodyScroll(this.targetElement);
-    }
+    // if (this.isSubscribed) {
+    //   enableBodyScroll(this.targetElement)
+    // }
+    // else {
+    //   disableBodyScroll(this.targetElement);
+    // }
   }
 
   getPolicy(evt) {
