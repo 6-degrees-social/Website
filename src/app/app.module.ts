@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import {BrowserModule, Title} from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { CookieService} from 'ngx-cookie-service';
@@ -64,7 +64,8 @@ import { RoutingModule } from './routing.module'
     RoutingModule
   ],
   providers: [
-    CookieService
+    CookieService,
+    Title
   ],
   bootstrap: [AppComponent]
 })

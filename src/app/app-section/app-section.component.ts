@@ -7,14 +7,21 @@ import {Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/c
 })
 export class AppSectionComponent implements OnInit {
   @ViewChild('appPic', {read: ElementRef}) private appPic: ElementRef;
+  @ViewChild('videoDiv', {read: ElementRef}) private videoDiv: ElementRef;
+  checked = false
   constructor() { }
 
   ngOnInit() {
+    console.log(this.videoDiv.nativeElement.offsetTop)
 
   }
 
   @HostListener("window:scroll")
   onWindowScroll(){
     this.appPic.nativeElement.style.marginTop = (window.pageYOffset / 6) - 360 + "px";
+    if ((window.pageYOffset - window.innerHeight) > window.innerHeight * 1.2 && this.checked === false) {
+      this.videoDiv.nativeElement.src += '?&autoplay=1'
+      this.checked = true
+    }
   }
 }
