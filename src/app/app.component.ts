@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, ChangeDetectorRef } from '@angular/core';
+import {Component, OnInit, ElementRef, ChangeDetectorRef, ViewChild} from '@angular/core';
 import { Title }  from '@angular/platform-browser';
 
 @Component({
@@ -6,7 +6,8 @@ import { Title }  from '@angular/platform-browser';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit { 
+export class AppComponent implements OnInit {
+  @ViewChild('nav', {read: ElementRef}) private navbar: ElementRef;
   title = 'sixdegrees-website';
   sections;
 
@@ -16,8 +17,9 @@ export class AppComponent implements OnInit {
     this.titleService.setTitle('6 Degrees Social')
   }
 
-
-
+  showNav() {
+    this.navbar.nativeElement.style.visibility = 'visible'
+  }
   getFrames(evt) {
     this.sections = evt;
     this.cdref.detectChanges();

@@ -76,6 +76,10 @@ export class NewsletterFormComponent implements OnInit {
         this.emailControl.hasError('email') ? 'Not a valid email' :
             '';
   }
+  closeMessage() {
+    this.submitEvent.emit(null)
+  }
+
   ngOnInit() {
   }
 }
