@@ -69,10 +69,10 @@ export class LandingPageComponent implements OnInit {
   //   this.showOverlayEvent.emit(evt);
   // }
   //
-  // isLandscape = () => window.innerHeight < window.innerWidth
+  isLandscape = () => window.innerHeight < window.innerWidth ? 1 : 2
   @HostListener("window:scroll")
   onWindowScroll(){
-    if (window.pageYOffset > window.innerHeight)
+    if (window.pageYOffset > (window.innerHeight / this.isLandscape()))
       this.imgToParallax.nativeElement.style.visibility = 'hidden'
     else
       this.imgToParallax.nativeElement.style.visibility = 'visible'

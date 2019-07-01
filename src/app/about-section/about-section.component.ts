@@ -19,7 +19,7 @@ export class AboutSectionComponent implements OnInit {
   onWindowScroll(){
     if (window.pageYOffset > (this.imageProperties.y - window.innerHeight)) {
       console.log(this.container.nativeElement.clientHeight)
-      this.aboutPic.nativeElement.style.marginTop = ((window.pageYOffset - this.imageProperties.y) / (window.innerWidth > 768 ? 6 : 10)) + 100 + "px";
+      this.aboutPic.nativeElement.style.marginTop = ((window.pageYOffset - this.imageProperties.y) / (window.innerWidth > 768 ? 6 : 10)) + "px";
     }
 
   }
