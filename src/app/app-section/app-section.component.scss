@@ -1,6 +1,6 @@
 .app-container{
-  height:700px;
-  margin-top: 500px;
+  height:750px;
+  margin-top: calc(100vw /3.5);
   font-size: 22px;
   text-align: center;
   position: relative;
@@ -8,9 +8,7 @@
   padding-top: 80px;
   padding-bottom: 80px;
   display: block;
-  overflow: hidden;
   background: white;
-  height: 700px;
 }
 .container-fluid {
   width: 80%;
@@ -25,62 +23,84 @@ h2 {
 .colContainer {
   margin-top: 40px;
 }
-.paragraph {
-  margin-top: 20px;
-  text-align: left;
-  font-size: 26px;
+.app-para-container {
+  padding-left: 40px;
+  padding-right: 30px;
 }
-.app-pic{
+.paragraph {
+  text-align: left;
+  font-size: 28px;
+}
+.pic-Container {
   position: absolute;
-  height: 600px;
   width: 100%;
   left: 50%;
   margin-left: -50%;
-  z-index: -2;
+  z-index: -1;
+}
+.app-pic{
+  width: 100%;
+}
+.app-pic-mobile {
+  display: none;
 }
 .video {
   width:560px;
   height:315px;
-  margin: 10%
+  margin: 0 !important;
+}
+.colContainer {
+  margin-top: 40px;
+}
+@media (min-width: 1920px ) {
+  .container-fluid {
+    width: 50%;
+  }
 }
 @media (max-width: 1200px) {
-  .app-pic{
-    height: 500px;
-  }
-  .video {
-    width:420px;
-    height:236.25px;
-    margin: 10%
-  }
-  .container-fluid {
-    width: 100%;
-  }
-  .paragraph {
-    font-size: 22px;
-    margin-left: 10px;
-  }
-}
-@media (max-width: 769px) {
-  .app-pic{
-    position: absolute;
-    width: 100%;
-    left: 50%;
-    margin-left: -50%;
-    z-index: -2;
-    overflow: hidden;
+  .app-container {
+    margin-top: calc(100vw /1.75);
+    height: 760px;
   }
   .app-para-container {
     display: none;
   }
-  .app-video {
-    width: 100vw;
-    height: 70vh;
-    top: 50%;
-  }
-  .app-container {
-    margin-top: 400px;
+  .video {
+    width:calc((40vw) * 1.777777);
+    height:(40vw);
   }
   .container-fluid {
     width: unset;
+  }
+  .app-pic{
+    display: none;
+  }
+  .app-pic-mobile {
+    width: 100%;
+    display: block;
+  }
+}
+@media (max-width: 750px) {
+  .app-container {
+    height: 700px;
+  }
+  .video {
+    width:calc((50vw) * 1.777777);
+    height:(50vw);
+  }
+}
+@media (max-width: 520px) {
+  .app-container {
+    height: 650px;
+  }
+  .video {
+    width:calc((70vw) * 1.777777);
+    height:(70vw);
+  }
+}
+@media (max-width: 350px) {
+  .video {
+    width:calc((90vw) * 1.777777);
+    height:(90vw);
   }
 }

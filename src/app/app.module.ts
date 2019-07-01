@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import {BrowserModule, Title} from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { CookieService} from 'ngx-cookie-service';
@@ -11,6 +11,7 @@ import { MatButtonModule, MatFormFieldModule} from '@angular/material';
 import { MatInputModule, MatInput } from '@angular/material/input';
 import { disableBodyScroll, enableBodyScroll, } from 'body-scroll-lock';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { AppComponent } from './app.component';
 import { NewsletterFormComponent } from './newsletter-form/newsletter-form.component';
@@ -28,7 +29,8 @@ import { PrivacySectionComponent } from './privacy-section/privacy-section.compo
 import { PhoneCarouselComponent } from './phone-carousel/phone-carousel.component';
 import { CommunitySectionComponent } from './community-section/community-section.component';
 import { FooterComponent } from './footer/footer.component';
-import { RoutingModule } from './routing.module' 
+import { RoutingModule } from './routing.module';
+import { CookieBarComponent } from './cookie-bar/cookie-bar.component' 
 
 @NgModule({
   declarations: [
@@ -47,7 +49,8 @@ import { RoutingModule } from './routing.module'
     PrivacySectionComponent,
     PhoneCarouselComponent,
     CommunitySectionComponent,
-    FooterComponent
+    FooterComponent,
+    CookieBarComponent
   ],
   imports: [
     BrowserModule,
@@ -61,10 +64,12 @@ import { RoutingModule } from './routing.module'
     MatFormFieldModule,
     MatInputModule,
     SlickCarouselModule,
-    RoutingModule
+    RoutingModule,
+    AngularFontAwesomeModule
   ],
   providers: [
-    CookieService
+    CookieService,
+    Title
   ],
   bootstrap: [AppComponent]
 })

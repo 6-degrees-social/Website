@@ -33,15 +33,16 @@ export class LandingPageComponent implements OnInit {
   @ViewChild('imgToParallax', {read: ElementRef}) private imgToParallax: ElementRef;
   @ViewChild('header', {read: ElementRef}) private header: ElementRef;
   isSubscribed: boolean = this._cookieService.check("Email");
+  hasSeenPolicy:boolean = this._cookieService.check('Policy')
   show = true;
 
   constructor(private _cookieService: CookieService, http: HttpClient ) {
-    if (this.isSubscribed) {
-      enableBodyScroll(this.targetElement)
-    }
-    else {
-      disableBodyScroll(this.targetElement);
-    }
+    // if (this.isSubscribed) {
+    //   enableBodyScroll(this.targetElement)
+    // }
+    // else {
+    //   disableBodyScroll(this.targetElement);
+    // }
   }
 
   getPolicy(evt) {
@@ -59,9 +60,11 @@ export class LandingPageComponent implements OnInit {
   }
 
   collapse() {
-    this.show = !this.show;
-    this.unlockBodyEvent.emit(null);
-    enableBodyScroll(this.targetElement);
+    // this.show = !this.show;
+    // this.unlockBodyEvent.emit(null);
+    // enableBodyScroll(this.targetElement);
+    this.Overlay.nativeElement.style.display = 'none'
+    this.showOverlayEvent.emit(null)
   }
 
   showOverlay(evt) {
@@ -69,13 +72,21 @@ export class LandingPageComponent implements OnInit {
     this.showOverlayEvent.emit(evt);
   }
 
-  isLandscape = () => window.innerHeight < window.innerWidth
+  isLandscape = () => window.innerHeight < window.innerWidth ? 1 : 2
   @HostListener("window:scroll")
   onWindowScroll(){
+    if (window.pageYOffset > (window.innerHeight / this.isLandscape()))
+      this.imgToParallax.nativeElement.style.visibility = 'hidden'
+    else
+      this.imgToParallax.nativeElement.style.visibility = 'visible'
     this.imgToParallax.nativeElement.style.top = (-window.pageYOffset / 1.5) + 'px';
     this.header.nativeElement.style.opacity = ((1 - (window.pageYOffset / window.innerHeight)).toString());
   }
 
-  ngOnInit() {}
-  targetElement = null;
+  ngOnInit() {
+    if (this.hasSeenPolicy) {
+      this.Overlay.nativeElement.style.display = 'none'
+      this.showOverlayEvent.emit(null)
+    }
+  }
 }
