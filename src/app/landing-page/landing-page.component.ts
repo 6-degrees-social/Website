@@ -33,6 +33,7 @@ export class LandingPageComponent implements OnInit {
   @ViewChild('imgToParallax', {read: ElementRef}) private imgToParallax: ElementRef;
   @ViewChild('header', {read: ElementRef}) private header: ElementRef;
   isSubscribed: boolean = this._cookieService.check("Email");
+  hasSeenPolicy:boolean = this._cookieService.check('Policy')
   show = true;
 
   constructor(private _cookieService: CookieService, http: HttpClient ) {
@@ -82,6 +83,10 @@ export class LandingPageComponent implements OnInit {
     this.header.nativeElement.style.opacity = ((1 - (window.pageYOffset / window.innerHeight)).toString());
   }
 
-  ngOnInit() {}
-  targetElement = null;
+  ngOnInit() {
+    if (this.hasSeenPolicy) {
+      console.log('yes i did')
+      this.Overlay.nativeElement.style.display = 'none'
+    }
+  }
 }

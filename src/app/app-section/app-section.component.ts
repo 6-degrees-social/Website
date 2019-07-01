@@ -21,7 +21,7 @@ export class AppSectionComponent implements OnInit {
   @HostListener("window:scroll")
   onWindowScroll(){
     if (window.pageYOffset > (this.imageProperties.y - window.innerHeight))
-      this.appPic.nativeElement.style.top = ((window.pageYOffset - this.imageProperties.y) / (window.innerWidth > 768 ? 6 : 10)) + (this.container.nativeElement.clientHeight - (window.innerWidth > 768 ? 0 : 150)) + "px";
+      this.appPic.nativeElement.style.top = ((window.pageYOffset - this.imageProperties.y) / (window.innerWidth > 768 ? 6 : 10)) + (this.container.nativeElement.clientHeight - (window.innerWidth > 768 ? 100 : 150)) + "px";
 
     if ((window.pageYOffset - window.innerHeight) > window.innerHeight * 1.2 && this.checked === false) {
       this.videoDiv.nativeElement.src += '?&autoplay=1'

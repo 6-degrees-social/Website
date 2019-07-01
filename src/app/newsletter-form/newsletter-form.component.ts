@@ -77,9 +77,12 @@ export class NewsletterFormComponent implements OnInit {
             '';
   }
   closeMessage() {
+    this.expiredDate.setDate(this.expiredDate.getDate() + 365)
+    this._cookieService.set('Policy', 'Seen', this.expiredDate)
     this.submitEvent.emit(null)
   }
 
   ngOnInit() {
+
   }
 }
