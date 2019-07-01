@@ -10,9 +10,15 @@
   overflow: hidden;
   background: white;
 }
+container-fluid {
+  width: 80%;
+}
+.para-section {
+  margin-top: 20px;
+}
 .paragraph {
   text-align: left;
-  font-size: 26px;
+  font-size: 30px;
 }
 
 .container-fluid {
@@ -20,6 +26,9 @@
 }
 .app-community-section {
   width: 300px;
+}
+.desktop-link {
+  margin-top: 100px;
 }
 .social-link {
   margin-left: 20px;
@@ -32,6 +41,11 @@ h1 {
   font-size: 36px;
   font-weight: 700;
 }
+@media (min-width: 1920px ) {
+  .container-fluid {
+    width: 50%;
+  }
+}
 @media (max-width: 1200px) {
   .insta-container {
     margin-top: calc(100vw /1.75) ;
@@ -39,9 +53,6 @@ h1 {
   h1 {
     font-size: 42px;
     font-weight: 700;
-  }
-  .container-fluid {
-    width: 100%;
   }
   .insta-frame {
     display: inline-block;

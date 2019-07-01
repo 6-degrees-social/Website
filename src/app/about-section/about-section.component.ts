@@ -13,15 +13,14 @@ export class AboutSectionComponent implements OnInit {
 
   ngOnInit() {
     this.imageProperties = this.aboutPic.nativeElement.getBoundingClientRect()
+    this.aboutPic.nativeElement.style.top = ((window.pageYOffset - this.imageProperties.y) / (window.innerWidth > 768 ? 6 : 10) ) + (this.container.nativeElement.clientHeight - (window.innerWidth > 768 ? 100 : 150)) + "px";
   }
 
   @HostListener("window:scroll")
   onWindowScroll(){
     if (window.pageYOffset > (this.imageProperties.y - window.innerHeight)) {
-      console.log(this.container.nativeElement.clientHeight)
-      this.aboutPic.nativeElement.style.marginTop = ((window.pageYOffset - this.imageProperties.y) / (window.innerWidth > 768 ? 6 : 10)) + 100 + "px";
+      this.aboutPic.nativeElement.style.top = ((window.pageYOffset - this.imageProperties.y) / (window.innerWidth > 768 ? 6 : 10) ) + (this.container.nativeElement.clientHeight - (window.innerWidth > 768 ? 100 : 150)) + "px";
     }
-
   }
 
   @HostListener("window:resize")

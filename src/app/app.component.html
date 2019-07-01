@@ -1,6 +1,7 @@
-<div class="navClass"><app-navbar [frameSections]="sections"></app-navbar></div>
-<app-landing-page></app-landing-page>
-<app-frame-list class="h-25" id="frame" (frames)="getFrames($event)"></app-frame-list>
+<div class="navClass" #nav><app-navbar [frameSections]="sections"></app-navbar></div>
+<!--<app-cookie-bar></app-cookie-bar>-->
+<app-landing-page (showOverlayEvent)="showNav()"></app-landing-page>
+<app-frame-list class="h-50" id="frame" (frames)="getFrames($event)"></app-frame-list>
 
 
 

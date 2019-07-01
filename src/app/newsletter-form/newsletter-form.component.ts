@@ -76,6 +76,13 @@ export class NewsletterFormComponent implements OnInit {
         this.emailControl.hasError('email') ? 'Not a valid email' :
             '';
   }
+  closeMessage() {
+    this.expiredDate.setDate(this.expiredDate.getDate() + 365)
+    this._cookieService.set('Policy', 'Seen', this.expiredDate)
+    this.submitEvent.emit(null)
+  }
+
   ngOnInit() {
+
   }
 }
