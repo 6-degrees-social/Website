@@ -43,35 +43,39 @@ export class LandingPageComponent implements OnInit {
     //   disableBodyScroll(this.targetElement);
     // }
   }
-
-  getPolicy(evt) {
-    let url = ''
-    if (evt == 'cookie')
-      url = 'https://www.iubenda.com/privacy-policy/11781988/cookie-policy'
-    else
-      url = 'https://www.iubenda.com/privacy-policy/11781988'
-    const windowFeatures = 'toolbar=no, location=no, directories=no, status=no, menubar=no, titlebar=no, scrollbars=no, resizable=no, ';
-    window.open(url, 'Privacy Policy', windowFeatures+' width='+ window.innerWidth/2 +', height='+ window.innerHeight/2 +', top='+ window.innerHeight/4 +', left='+ window.innerWidth/4)
-  }
-
-  get stateName() {
-    return this.show ? 'show' : 'hide';
-  }
-
-  collapse() {
-    this.show = !this.show;
-    this.unlockBodyEvent.emit(null);
-    enableBodyScroll(this.targetElement);
-  }
-
-  showOverlay(evt) {
-    this.Overlay.nativeElement.style.display = 'block'
-    this.showOverlayEvent.emit(evt);
-  }
-
-  isLandscape = () => window.innerHeight < window.innerWidth
+  //
+  // getPolicy(evt) {
+  //   let url = ''
+  //   if (evt == 'cookie')
+  //     url = 'https://www.iubenda.com/privacy-policy/11781988/cookie-policy'
+  //   else
+  //     url = 'https://www.iubenda.com/privacy-policy/11781988'
+  //   const windowFeatures = 'toolbar=no, location=no, directories=no, status=no, menubar=no, titlebar=no, scrollbars=no, resizable=no, ';
+  //   window.open(url, 'Privacy Policy', windowFeatures+' width='+ window.innerWidth/2 +', height='+ window.innerHeight/2 +', top='+ window.innerHeight/4 +', left='+ window.innerWidth/4)
+  // }
+  //
+  // get stateName() {
+  //   return this.show ? 'show' : 'hide';
+  // }
+  //
+  // collapse() {
+  //   this.show = !this.show;
+  //   this.unlockBodyEvent.emit(null);
+  //   enableBodyScroll(this.targetElement);
+  // }
+  //
+  // showOverlay(evt) {
+  //   this.Overlay.nativeElement.style.display = 'block'
+  //   this.showOverlayEvent.emit(evt);
+  // }
+  //
+  // isLandscape = () => window.innerHeight < window.innerWidth
   @HostListener("window:scroll")
   onWindowScroll(){
+    if (window.pageYOffset > window.innerHeight)
+      this.imgToParallax.nativeElement.style.visibility = 'hidden'
+    else
+      this.imgToParallax.nativeElement.style.visibility = 'visible'
     this.imgToParallax.nativeElement.style.top = (-window.pageYOffset / 1.5) + 'px';
     this.header.nativeElement.style.opacity = ((1 - (window.pageYOffset / window.innerHeight)).toString());
   }

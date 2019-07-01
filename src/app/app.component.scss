@@ -15,5 +15,8 @@ app-frame-list {
   top: 100%;
   position: absolute;
 }
-
-
+@media (min-width: 576px) {
+    .container {
+    max-width: unset;
+  }
+}

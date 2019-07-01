@@ -1,13 +1,15 @@
-<div class="steps-container">
+<div class="steps-container" #container>
   <div class="container-fluid ">
     <div>
       <h1>Discover new, inspiring travel recommendations from the people closest to you.</h1>
       <h2>Access to hundreds of real experiences and recommendations from your social network at your fingertips.</h2>
     </div>
     <div class="colContainer text-left">
-      <div class="row">
-        <div class="app-carousel col">
-          <app-phone-carousel></app-phone-carousel>
+      <div class="row unflex">
+        <div class="carousel-container" >
+          <div class="app-carousel col">
+            <app-phone-carousel></app-phone-carousel>
+          </div>
         </div>
         <div class="row links-mobile">
           <div class="col app-wrap ">
@@ -32,8 +34,10 @@
       </div>
     </div>
   </div>
+  <div class="pic-Container" #stepsPic>
+    <img class="stepsPic" src="../../assets/Images/Trusted-recommendations.jpg">
+    <img class="stepsPicMobile" src="../../assets/Images/Trusted-recommendations-mobile.jpg">
+  </div>
 </div>
-<div class="pic-Container">
-  <img class="stepsPic" src="../../assets/Images/Trusted-recommendations.jpg" #stepsPic>
-</div>
+
 

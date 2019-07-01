@@ -1,5 +1,5 @@
 .insta-container{
-  margin-top: 500px;
+  margin-top: calc(100vw /3.5);
   font-size: 22px;
   text-align: center;
   position: relative;
@@ -33,22 +33,15 @@ h1 {
   font-weight: 700;
 }
 @media (max-width: 1200px) {
+  .insta-container {
+    margin-top: calc(100vw /1.75) ;
+  }
   h1 {
     font-size: 42px;
     font-weight: 700;
   }
   .container-fluid {
     width: 100%;
-  }
-  .paragraph {
-    font-size: 24px;
-    margin-left: 10px;
-  }
-}
-@media (max-width: 769px) {
-
-  .insta-container {
-    margin-top: 400px;
   }
   .insta-frame {
     display: inline-block;
@@ -66,5 +59,3 @@ h1 {
     visibility: visible;
   }
 }
-
-

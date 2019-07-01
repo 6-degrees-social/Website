@@ -2,11 +2,6 @@
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
 @import 'customize-bootstrap.sass';
 @import "customize-bootstrap.scss";
-
-.container-fluid{
-    width: calc(100% - 2 * 32px);
-    padding: 0 32px;
-}
 html, body {
     height: 100%;
     width: 100%;
