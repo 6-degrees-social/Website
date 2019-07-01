@@ -21,18 +21,18 @@ export class InstagramFeedComponent implements OnInit {
   constructor(private _instagramService: InstagramApiService, private cdref: ChangeDetectorRef) { }
 
   ngOnInit() {
-    this._instagramService.getInstaData().subscribe(({recent_photos: photos}) => {
-      this.instagramObjects = photos;
+    // this._instagramService.getInstaData().subscribe(({recent_photos: photos}) => {
+    //   this.instagramObjects = photos;
 
-      this.instagramObjects.forEach(obj => {
-        this.slides.push(obj.images.standard_resolution.url);
-      });
-    });
+    //   this.instagramObjects.forEach(obj => {
+    //     this.slides.push(obj.images.standard_resolution.url);
+    //   });
+    // });
   }
 
   getSlideNum(slideNum) {
     this.current = this.instagramObjects[slideNum];
-    this.getAttributes(this.current);
+    // this.getAttributes(this.current);
   }
 
   getAttributes({likes, comments, caption, user}) {
