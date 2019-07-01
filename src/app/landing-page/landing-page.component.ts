@@ -85,8 +85,8 @@ export class LandingPageComponent implements OnInit {
 
   ngOnInit() {
     if (this.hasSeenPolicy) {
-      console.log('yes i did')
       this.Overlay.nativeElement.style.display = 'none'
+      this.showOverlayEvent.emit(null)
     }
   }
 }
