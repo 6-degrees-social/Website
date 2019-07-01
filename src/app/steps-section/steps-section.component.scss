@@ -1,6 +1,6 @@
 .steps-container{
-  height: 750px;
-  margin-top: 500px;
+  height: 800px;
+  margin-top: calc(100vw /3.5);
   font-size: 22px;
   text-align: center;
   position: relative;
@@ -8,7 +8,6 @@
   padding-top: 80px;
   padding-bottom: 80px;
   display: block;
-  overflow: hidden;
   background: white;
 }
 .container-fluid {
@@ -20,12 +19,18 @@
 .list-item {
   margin-bottom: 12px;
 }
-.stepsPic {
-  width: 100%;
+.pic-Container {
   position: absolute;
+  width: 100%;
   left: 50%;
   margin-left: -50%;
   z-index: -1;
+}
+.stepsPic {
+  width: 100%;
+}
+stepsPicMobile {
+  display: none;
 }
 .links-mobile {
   display: none;
@@ -51,39 +56,29 @@ h2 {
   margin-left: -5px;
   font-size: 22px;
 }
-@media (max-width: 2180px ) {
-  .list-group {
-    font-size: 24px;
-  }
-}
-@media (max-width: 1860px ) {
-  h1 {
-    font-size: 36px;
-    font-weight: 700;
-  }
-  h2 {
-    font-size: 26px;
-  }
-  .list-group {
-    font-size: 20px;
+@media (min-width: 1920px ) {
+  .container-fluid {
+    width: 50%;
   }
 }
 @media (max-width: 1200px) {
-  .container-fluid {
-    width: 100%;
-  }
-}
-@media (max-width: 769px) {
   .steps-container {
-    margin-top: 400px;
+    margin-top: calc(100vw /1.75);
     height: 920px;
   }
   .container-fluid {
     width: unset;
   }
+  .carousel-container {
+    text-align: center;
+  }
   .app-carousel {
-    left: 20%;
-    top: 50%;
+    width: auto;
+    padding: 0;
+    display: inline-block;
+  }
+  .unflex {
+    display: block;
   }
   .stepsList {
     display: none;
@@ -103,5 +98,12 @@ h2 {
   }
   .list-group-item {
     text-align: left;
+  }
+  .stepsPic {
+    display: none;
+  }
+  .stepsPicMobile {
+    width: 100%;
+    display: block;
   }
 }
