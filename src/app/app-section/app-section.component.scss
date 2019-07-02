@@ -57,6 +57,11 @@ h2 {
     width: 50%;
   }
 }
+@media (max-width: 1400px) {
+  .paragraph {
+    font-size: 22px;
+  }
+}
 @media (max-width: 1200px) {
   .app-container {
     margin-top: calc(100vw /1.75);
